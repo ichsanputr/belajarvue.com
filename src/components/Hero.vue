@@ -1,3 +1,4 @@
+<SeriesSlider/>
 <script setup>
 import { ref } from 'vue'
 import Google from './Icons/Google.vue';

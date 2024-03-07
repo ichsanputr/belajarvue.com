@@ -40,7 +40,7 @@ const headerClass = computed(() => {
 
 <template>
     <header class="sticky top-0 z-50" :class="headerClass">
-        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[70%]">
+        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[75%]">
             <span class="font-semibold text-xl">BelajarVue.com _< </span>
                     <div class="flex justify-between items-center">
                         <span class="cursor-pointer">{{ $t('home') }}</span>
@@ -69,7 +69,7 @@ const headerClass = computed(() => {
                                 <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                                 <div style="width: 20rem;" class="pa-4 menu min-h-full bg-base-200">
                                     <div class="flex items-center justify-between px-3 my-2">
-                                        <span class="font-medium text-lg">BelajarVue _< </span>
+                                        <span class="font-medium text-lg">BelajarVue.com </span>
                                                 <label for="my-drawer" aria-label="close sidebar"
                                                     class="font-normal rounded-full py-[7px] px-[7px] border border-black"><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
