@@ -1,0 +1,18 @@
+{
+    "hero_signup_branding": "Daftar akun untuk menikmati semua fitur di website ini",
+    "hero_title": "Platform Belajar Vue.js",
+    "most_equipped": "Terlengkap",
+    "hero_description": "Pelajari semua hal mengenai Vue.js",
+
+    "enter_your_email": "Masukkan email Anda",
+    "enter_your_password": "Masukkan password Anda",
+    "sign_up": "Daftar",
+    "accept_tos": "Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan Privasi BelajarVue.",
+    "register_option": "Atau daftar dengan:",
+    "already_register": "Sudah memiliki akun?",
+
+    "home": "Beranda",
+    "article": "Artikel",
+
+    "search_article_placeholder": "Cari artikel, series, atau challenge"
+}

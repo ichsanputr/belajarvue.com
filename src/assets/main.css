@@ -1,4 +1,13 @@
-/* src/style.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './typhography.css';
+
+body {
+    font-family: 'General Sans', sans-serif;
+}
+
+a {
+    color: #387ADF;
+}

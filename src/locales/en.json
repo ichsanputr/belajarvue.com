@@ -1,0 +1,18 @@
+{
+    "hero_signup_branding": "Register an account to enjoy all the features on this website",
+    "most_equipped": "Vue.js Learning Platform",
+    "hero_title": "Most Equipped",
+    "hero_description": "Learn all about Vue.js",
+
+    "enter_your_email": "Enter your email",
+    "enter_your_password": "Enter your password",
+    "sign_up": "Sign Up",
+    "accept_tos": "By signing up, you agree to BelajarVue's Terms of Service & Privacy Policy.",
+    "register_option": "Or Signup with:",
+    "already_register": "Already create an account?",
+
+    "home": "Home",
+    "article": "Article",
+
+    "search_article_placeholder": "Search article, series, or challenge"
+}
