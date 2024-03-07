@@ -4,9 +4,11 @@ import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
 import Vue from './Icons/Vue.vue';
+import { useI18n } from 'vue-i18n';
 
 const matery = ref(['Vue.js 2', 'Pinia State Manegement', 'Nuxt.js 2', 'Vuex', 'Quasar', 'Vue.js 3', 'Nuxt.js 3', 'Supabase'])
 const currentMatery = ref(0)
+const { locale } = useI18n({ useScope: 'global' })
 
 setInterval(() => {
     if (currentMatery.value == matery.value.length - 1) {
@@ -35,12 +37,12 @@ setInterval(() => {
                 </div>
             </div>
             <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-10">
-                <div class="px-4 py-2 w-fit text-[32px] md:text-[40px] font-bold bg-[#FBEEE4] shadow ">{{
-                    $t('hero_title') }}</div>
+                <h1 class="px-4 py-2 w-fit text-[28px] md:text-[40px] font-bold bg-[#FBEEE4] shadow">
+                    {{$t('hero_title') }} 
+                </h1>
                 <div
-                    class="px-4 py-2 w-fit text-[32px] md:text-[40px] font-bold bg-[#FBEEE4] mt-3 shadow flex items-center">
-                    <span class="mr-1">{{ $t('most_equipped') }}</span>
-                    <Vue class="flex mt-2 md:hidden" v-if="locale == 'id'" />
+                    class="px-4 py-2 w-fit text-[28px] md:text-[40px] font-bold bg-[#FBEEE4] mt-3 shadow flex items-center">
+                    <span class="mr-1">{{ $t('most_equipped') }}</span><Vue class="flex md:hidden" v-if="locale == 'id'" />
                 </div>
                 <div class="bg-black px-3 py-2 mt-6 mb-3 text-white w-fit text-sm shadow">{{ $t('hero_description') }}
                 </div>
