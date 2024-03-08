@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <div class="bg-[#FBEEE4] py-8">
         <div class="mx-auto w-full md:w-[85%] pb-8">
@@ -12,7 +9,7 @@
                 <div v-for="i in 6" class="w-full cursor-pointer my-10 md:my-0">
                     <img width="100%" class="rounded-lg shadow"
                         src="https://ik.imagekit.io/vpaoovtzwz/tr:h-360,w-640/images/series/01HPSP40F09A2TBD92SNP0X8P3.jpg?tr=n-thumbnail" />
-                    <div class="my-3 font-semibold text-[18px] mt-6">Belajar anjay</div>
+                    <div class="my-3 font-semibold text-[18px] mt-6">Membuat Aplikasi Donasi dengan Vue 3, Firebase, Tailwind CSS</div>
                     <div class="my-3 font-normal text-[14px] md:text-[16px]">Pelajari cara kerja Blueprint untuk
                         mempercepat
                         pembuatan model, controller, dan komponen aplikasi....</div>

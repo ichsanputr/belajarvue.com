@@ -19,5 +19,8 @@
     "article_latest": "Latest Article",
     "article_latest_description": "Latest article we've published.",
     "see_more": "See more",
-    "contact": "Contact"
+    "contact": "Contact",
+    "newsletter": "Newsletter",
+    "newsletter_description": "Get updated notifications from email when we publish an article.",
+    "subscribe": "Subscribe"
 }

@@ -19,5 +19,8 @@
     "article_latest": "Artikel Terbaru",
     "article_latest_description": "Artikel terbaru yang telah kami terbitkan.",
     "see_more": "Lihat semua",
-    "Contact": "Kontak"
+    "contact": "Kontak",   
+    "newsletter": "Berlangganan Artikel",
+    "newsletter_description": "Dapatkan notifikasi secara update dari email ketika kami menerbitkan sebuah artikel.",
+    "subscribe": "Langganan"
 }

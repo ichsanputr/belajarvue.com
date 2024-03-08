@@ -9,6 +9,7 @@ import { useI18n } from 'vue-i18n';
 const matery = ref(['Vue.js 2', 'Pinia State Manegement', 'Nuxt.js 2', 'Vuex', 'Quasar', 'Vue.js 3', 'Nuxt.js 3', 'Supabase'])
 const currentMatery = ref(0)
 const { locale } = useI18n({ useScope: 'global' })
+const windowWidth = ref(window.innerWidth)
 
 setInterval(() => {
     if (currentMatery.value == matery.value.length - 1) {
@@ -21,7 +22,7 @@ setInterval(() => {
 <template>
     <div class="block md:grid grid-cols-2 bg-[#fbeee4]">
         <div class="bg-dotted flex justify-center items-center relative">
-            <div class="hidden md:block">
+            <div v-if="windowWidth > 768" class="block">
                 <div class="absolute flex w-fit bottom-4 left-5 z-0">
                     <img width="110px" style="transform: rotate(12deg);height: 85px;" src="../assets/images/vue.png" />
                 </div>
