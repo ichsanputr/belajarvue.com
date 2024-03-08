@@ -22,14 +22,14 @@ onMounted(async () => {
         </div>
         <div class="flex w-full justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
             <div v-for="(i,index) in 15" :class="{'ml-10' : index == 0}"
-                class="shadow bg-white relative w-[300px] mr-10 rounded-sm flex flex-none h-[200px] flex-col py-6 space-y-1">
+                class="shadow bg-white relative w-[300px] mr-10 rounded-lg flex flex-none h-[200px] flex-col py-6 space-y-1">
                 <div class="block px-4 mt-6">
                     <div class="font-semibold text-[16px]">Vue.js + Supabase</div>
                     <div class="text-[14px]">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </div>
                 </div>
-                <div class="absolute top-0 bg-[#EAFDC6] w-full rounded-b-md text-center font-medium py-1">
+                <div class="absolute top-[-5px] bg-[#EAFDC6] w-full rounded-t-md text-center font-medium py-1">
                     12 article
                 </div>
                 <div class="absolute text-[14px] bottom-0 w-full rounded-b-md px-4 pb-2 border-t-2 border-dotted font-medium py-1">

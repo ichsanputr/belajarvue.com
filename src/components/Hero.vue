@@ -72,13 +72,13 @@ setInterval(() => {
                 <span class="font-light text-sm">{{ $t('accept_tos') }}</span>
                 <div class="my-5 text-base">{{ $t('register_option') }}</div>
                 <div class="flex">
-                    <div class="bg-white border border-black px-3 py-3">
+                    <div class="bg-white border border-black px-3 py-3 rounded-lg cursor-pointer">
                         <Google />
                     </div>
-                    <div class="bg-white border mx-3 border-black px-3 py-3">
+                    <div class="bg-white border mx-3 border-black px-3 py-3 rounded-lg cursor-pointer">
                         <Github />
                     </div>
-                    <div class="bg-white border border-black px-3 py-3">
+                    <div class="bg-white border border-black px-3 py-3 rounded-lg cursor-pointer">
                         <Facebook />
                     </div>
                 </div>
