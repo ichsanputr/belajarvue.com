@@ -14,5 +14,10 @@
     "home": "Beranda",
     "article": "Artikel",
 
-    "search_article_placeholder": "Cari artikel, series, atau challenge"
+    "search_article_placeholder": "Cari artikel, series, atau challenge",
+
+    "article_latest": "Artikel Terbaru",
+    "article_latest_description": "Artikel terbaru yang telah kami terbitkan.",
+    "see_more": "Lihat semua",
+    "Contact": "Kontak"
 }

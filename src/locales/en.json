@@ -14,5 +14,10 @@
     "home": "Home",
     "article": "Article",
 
-    "search_article_placeholder": "Search article, series, or challenge"
+    "search_article_placeholder": "Search article, series, or challenge",
+
+    "article_latest": "Latest Article",
+    "article_latest_description": "Latest article we've published.",
+    "see_more": "See more",
+    "contact": "Contact"
 }

@@ -15,7 +15,7 @@ onMounted(async () => {
 
 <template>
     <div class="bg-[#10162F] py-8">
-        <div class="w-[80%] mx-auto mt-4 mb-8">
+        <div class="w-[85%] mx-auto mt-4 mb-8">
             <h2 class="text-white font-medium text-[20px]">Ingin belajar apa hari ini?</h2>
             <p class="text-white text-[14px] mt-2">Hei, ada banyak pilihan menarik di sini, loh! Yuk, temukan sesuatu
                 yang seru untuk dipelajari.</p>
