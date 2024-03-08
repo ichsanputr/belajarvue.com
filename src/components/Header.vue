@@ -67,9 +67,9 @@ const headerClass = computed(() => {
                             </div>
                             <div class="drawer-side">
                                 <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-                                <div style="width: 20rem;" class="pa-4 menu min-h-full bg-base-200">
+                                <div style="width: 20rem;" class="pa-4 menu min-h-full bg-[#fbeee4]">
                                     <div class="flex items-center justify-between px-3 my-2">
-                                        <span class="font-medium text-lg">BelajarVue.com </span>
+                                        <span class="font-semibold text-lg">BelajarVue.com </span>
                                                 <label for="my-drawer" aria-label="close sidebar"
                                                     class="font-normal rounded-full py-[7px] px-[7px] border border-black"><svg
                                                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -84,7 +84,7 @@ const headerClass = computed(() => {
                                         <input type="text" class="grow"
                                             :placeholder="$t('search_article_placeholder')" />
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                            class="w-4 h-4 opacity-70">
+                                            class="w-5 h-5 opacity-70">
                                             <path fill-rule="evenodd"
                                                 d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                                                 clip-rule="evenodd" />
@@ -115,3 +115,8 @@ const headerClass = computed(() => {
             </div>
     </header>
 </template>
+<style scoped>
+a {
+    color: black;
+}
+</style>
