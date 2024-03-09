@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#FBEEE4] py-8">
+    <div class="bg-[#FBEEE4] py-8 pb-20">
         <div class="mx-auto w-full md:w-[85%] pb-8">
             <div class="mt-4 mb-8 md:mx-0 mx-8">
                 <h2 class="font-semibold text-[20px]">{{ $t('article_latest') }}</h2>

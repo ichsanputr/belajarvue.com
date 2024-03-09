@@ -5,7 +5,7 @@ import Instagram from './Icons/Instagram.vue';
 </script>
 
 <template>
-    <div class="bg-[#FBEEE4] pt-8">
+    <div class="bg-[#FBEEE4] pt-8 border-t border-slate-300">
         <div class="mx-auto w-full md:w-[85%]">
             <div class="px-4 md:px-0 block md:grid grid-cols-6 gap-6 mb-4 md:mb-10">
                 <div class="block col-span-2">

@@ -24,5 +24,6 @@
     "newsletter_description": "Get updated notifications from email when we publish an article.",
     "subscribe": "Subscribe",
 
-    "article_list_description": "All articles that have been published, whether included in a series or not."
+    "article_list_description": "All articles that have been published, whether included in a series or not.",
+    "start": "Start"
 }
