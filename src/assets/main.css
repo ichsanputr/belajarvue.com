@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './typhography.css';
-
 body {
     font-family: 'General Sans', sans-serif;
 }

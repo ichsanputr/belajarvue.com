@@ -27,7 +27,7 @@ import Instagram from './Icons/Instagram.vue';
                             <li>{{ $t('article') }}</li>
                             <li>Series</li>
                         </ul>
-                        <div class="font-semibold text-[16px] mt-6">TOC</div>
+                        <div class="font-semibold text-[16px] mt-6">Terms of Service</div>
                         <ul>
                             <li>Privacy Policy</li>
                             <li>Disclaimer</li>

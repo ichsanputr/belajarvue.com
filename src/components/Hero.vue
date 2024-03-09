@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
@@ -9,7 +9,11 @@ import { useI18n } from 'vue-i18n';
 const matery = ref(['Vue.js 2', 'Pinia State Manegement', 'Nuxt.js 2', 'Vuex', 'Quasar', 'Vue.js 3', 'Nuxt.js 3', 'Supabase'])
 const currentMatery = ref(0)
 const { locale } = useI18n({ useScope: 'global' })
-const windowWidth = ref(window.innerWidth)
+const windowWidth = ref(null)
+
+onMounted(() => {
+    windowWidth.value = window.innerWidth
+})
 
 setInterval(() => {
     if (currentMatery.value == matery.value.length - 1) {
@@ -38,14 +42,17 @@ setInterval(() => {
                 </div>
             </div>
             <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-10">
-                <h1 class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] shadow">
-                    {{$t('hero_title') }} 
+                <h1
+                    class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] shadow">
+                    {{ $t('hero_title') }}
                 </h1>
                 <div
                     class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] mt-3 shadow flex items-center">
-                    <span class="mr-1">{{ $t('most_equipped') }}</span><Vue class="flex md:hidden" v-if="locale == 'id'" />
+                    <span class="mr-1">{{ $t('most_equipped') }}</span>
+                    <Vue class="flex md:hidden" v-if="locale == 'id'" />
                 </div>
-                <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">{{ $t('hero_description') }}
+                <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">{{
+                $t('hero_description') }}
                 </div>
                 <div class="bg-black px-3 py-2 max-[380px]:text-[12px] text-white w-fit text-sm shadow">
                     <span>{{ matery[currentMatery] }}</span>

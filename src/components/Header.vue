@@ -14,9 +14,10 @@ import Lang from './Partials/Lang.vue';
 
 const router = useRoute()
 const stickyActive = ref(false)
-const windowWidth = ref(window.innerWidth)
+const windowWidth = ref(null)
 
 onMounted(async () => {
+    windowWidth.value = window.innerWidth
     window.addEventListener('resize', () => {
         windowWidth.value = window.innerWidth
     });
@@ -40,8 +41,8 @@ const headerClass = computed(() => {
 
 <template>
     <header class="sticky top-0 z-50" :class="headerClass">
-        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[75%]">
-            <span class="font-semibold text-xl">BelajarVue.com _< </span>
+        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[85%]">
+            <span @click="$router.push('/')" class="cursor-pointer font-semibold text-xl">BelajarVue.com _< </span>
                     <div class="flex justify-between items-center">
                         <span class="cursor-pointer">{{ $t('home') }}</span>
                         <span class="mx-6 cursor-pointer">Series</span>
@@ -70,15 +71,15 @@ const headerClass = computed(() => {
                                 <div style="width: 20rem;" class="pa-4 menu min-h-full bg-[#fbeee4]">
                                     <div class="flex items-center justify-between px-3 my-2">
                                         <span class="font-semibold text-lg">BelajarVue.com </span>
-                                                <label for="my-drawer" aria-label="close sidebar"
-                                                    class="font-normal rounded-full py-[7px] px-[7px] border border-black"><svg
-                                                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                                        viewBox="0 0 16 16">
-                                                        <path fill="currentColor" fill-rule="evenodd"
-                                                            d="M4.28 3.22a.75.75 0 0 0-1.06 1.06L6.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06L8 9.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L9.06 8l3.72-3.72a.75.75 0 0 0-1.06-1.06L8 6.94z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                </label>
+                                        <label for="my-drawer" aria-label="close sidebar"
+                                            class="font-normal rounded-full py-[7px] px-[7px] border border-black"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                viewBox="0 0 16 16">
+                                                <path fill="currentColor" fill-rule="evenodd"
+                                                    d="M4.28 3.22a.75.75 0 0 0-1.06 1.06L6.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06L8 9.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L9.06 8l3.72-3.72a.75.75 0 0 0-1.06-1.06L8 6.94z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </label>
                                     </div>
                                     <label class="input my-4 mx-3 input-bordered flex items-center gap-2">
                                         <input type="text" class="grow"

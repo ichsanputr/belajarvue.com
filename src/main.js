@@ -1,29 +1,30 @@
-import './assets/main.css'
-
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { ViteSSG } from 'vite-ssg'
+import App from './App.vue'
+import routes from '~pages'
 import { createI18n } from 'vue-i18n'
+
+import './assets/main.css'
 
 import en from './locales/en.json'
 import id from './locales/id.json'
 
-import App from './App.vue'
-import router from './router'
-
-const i18n = createI18n({
-    legacy: false,
-    locale: 'id',
-    fallbackLocale: 'en',
-    messages: {
+export const createApp = ViteSSG(
+  App,
+  {
+    base: '/',
+    routes,
+  },
+  ({ app }) => {
+    const i18n = createI18n({
+      legacy: false,
+      locale: 'id',
+      fallbackLocale: 'en',
+      messages: {
         en,
         id
-    },
-})
+      },
+    })
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-app.use(i18n)
-
-app.mount('#app')
+    app.use(i18n)
+  },
+)
