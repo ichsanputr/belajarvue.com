@@ -11,19 +11,19 @@ const currentPage = ref(1)
 <template>
     <div class="w-fit flex items-center">
         <div class="cursor-pointer px-2 py-2 border border-black rounded-lg">
-            <ArrowLeftDouble/>
+            <ArrowLeftDouble class="w-[14px] md:w-[16px]"/>
         </div>
         <div class="cursor-pointer ml-2 px-2 py-2 border border-black rounded-lg">
-            <ArrowLeft/>
+            <ArrowLeft class="w-[14px] md:w-[16px]"/>
         </div>
         <div class="cursor-pointer flex items-center mx-4">
-            <span>{{ currentPage }} / {{ props.totalPage }}</span>
+            <span class="text-[14px] md:text-[16px]">{{ currentPage }} / {{ props.totalPage }}</span>
         </div>
         <div class="cursor-pointer px-2 py-2 border border-black rounded-lg">
-            <ArrowRightDouble/>
+            <ArrowRightDouble class="w-[14px] md:w-[16px]"/>
         </div>
         <div class="cursor-pointer ml-2 px-2 py-2 border border-black rounded-lg">
-            <ArrowRight/>
+            <ArrowRight class="w-[14px] md:w-[16px]"/>
         </div>
     </div>
 </template>
