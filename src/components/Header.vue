@@ -4,13 +4,18 @@ import { onMounted, computed, ref } from 'vue';
 
 import Search from './Icons/Search.vue';
 import Night from './Icons/Night.vue';
+import Light from './Icons/Light.vue';
+import Theme from './Icons/Theme.vue';
 import Hamburger from './Icons/Hamburger.vue';
 import Article from './Icons/Article.vue';
 import Series from './Icons/Series.vue';
 import Home from './Icons/Home.vue';
 import Challenge from './Icons/Challenge.vue';
 import Login from './Icons/Login.vue';
-import Lang from './Partials/Lang.vue';
+import User from './Icons/User.vue';
+import Website from './Icons/Website.vue';
+import Profile from './Icons/Profile.vue';
+// import Lang from './Partials/Lang.vue';
 
 const router = useRoute()
 const stickyActive = ref(false)
@@ -40,18 +45,62 @@ const headerClass = computed(() => {
 </script>
 
 <template>
+    <dialog id="search_modal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
     <header class="sticky top-0 z-50" :class="headerClass">
-        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[90%]">
-            <span @click="$router.push('/')" class="cursor-pointer font-semibold text-xl">BelajarVue.com _< </span>
-                    <div class="flex justify-between items-center">
+        <div v-if="windowWidth > 600" class="flex justify-between items-center py-3 mx-auto w-[90%]">
+            <span @click="$router.push('/')" class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
+                    <div class="flex justify-between items-center text-sm">
                         <span @click="$router.push('/')" class="cursor-pointer">{{ $t('home') }}</span>
                         <span @click="$router.push('/series')" class="mx-6 cursor-pointer">Series</span>
                         <span @click="$router.push('/article')" class="cursor-pointer">{{ $t('article') }}</span>
                         <span class="ml-6 mr-3 cursor-pointer">Challenge</span>
                         <span class="mx-4">|</span>
-                        <Lang class="mx-2" :is-sticky="stickyActive" />
-                        <Night v-if="router.path != '/'" />
-                        <Search class="ml-2 cursor-pointer" />
+                        <!-- <Lang class="mx-2" :is-sticky="stickyActive" /> -->
+                        <Search onclick="search_modal.showModal()" class="ml-2 cursor-pointer" />
+                        <div class="dropdown dropdown-bottom dropdown-end">
+                            <div tabindex="0" role="button">
+                                <Theme class="mx-4 cursor-pointer" v-if="router.path != '/'" />
+                            </div>
+                            <ul tabindex="0"
+                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[9rem]">
+                                <li><a class="flex">
+                                        <Night class="w-[16px]" />
+                                        <span>Dark</span>
+                                    </a></li>
+                                <li><a class="flex">
+                                        <Light class="w-[16px]" />
+                                        <span>Light</span>
+                                    </a></li>
+                                <li><a class="flex">
+                                        <Website class="w-[16px]" />
+                                        <span>Default</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown dropdown-bottom dropdown-end">
+                            <div tabindex="0" role="button">
+                                <User class="cursor-pointer" v-if="router.path != '/'" />
+                            </div>
+                            <div tabindex="0"
+                                class="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-[12rem]">
+                                <div class="flex items-center my-3 px-3">
+                                    <Profile class="flex-none mr-1" />
+                                    <span class="font-medium">Siapa kamu?</span>
+                                </div>
+                                <hr>
+                                <ul>
+                                    <li><a>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
         </div>
         <!-- Header Mobile -->
@@ -119,5 +168,13 @@ const headerClass = computed(() => {
 <style scoped>
 a {
     color: black;
+}
+
+.dropdown-bottom .dropdown-content {
+    top: 200% !important
+}
+
+.rounded-box {
+    border-radius: 12px !important;
 }
 </style>

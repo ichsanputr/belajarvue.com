@@ -16,10 +16,10 @@ onMounted(() => {
             <div class="mx-auto w-[85%] h-fit my-auto block max-w-screen-xl">
                 <p class="bg-[#FBEEE4] shadow px-4 py-2 w-fit text-xs md:text-sm">Senin, 18 September 2023</p>
                 <h1
-                    class="px-4 py-2 font-bold bg-[#FBEEE4] shadow md:w-[70%] w-fit my-5">
+                    class="px-4 py-2 font-bold bg-[#FBEEE4] shadow w-fit md:max-w-[70%] my-5">
                     Belajar Integrasi Vue.js 3 dengan Websocket RPC
                 </h1>
-                <p class="text-black bg-[#FBEEE4] shadow mt-3 px-4 py-3 text-sm md:w-[65%] w-fit">Ingin menghemat waktu dan usaha dalam pembuatan Admin Panel ddengan Laravel? Artikel ini akan membahas tutorial Filament yang akan memandu Anda mulai dari nol.</p>
+                <p class="text-black bg-[#FBEEE4] shadow mt-3 px-4 py-3 text-sm md:w-[65%] w-fit">Ingin menghemat waktu dan usaha dalam pembuatan Admin Panel dengan Laravel? Artikel ini akan membahas tutorial Filament yang akan memandu Anda mulai dari nol.</p>
                 <div class="flex items-center w-fit mt-6">
                     <div class="rounded-xl bg-[black] text-white px-2 py-1 text-xs flex items-center">
                         <SeriesLight class="text-[12px] mr-1"/>
