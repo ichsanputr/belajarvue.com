@@ -48,7 +48,7 @@ import Instagram from './Icons/Instagram.vue';
                         <div class="font-light text-[14px] my-4 mb-5">{{ $t('newsletter_description') }}</div>
                         <div class="w-full md:w-[75%] flex justify-between items-center bg-white py-2 rounded-3xl px-2 text-[14px] bprder border-black shadow">
                             <input class="pl-3 outline-none" placeholder="Email Address" />
-                            <div class="cursor-pointer flex justify-between items-center bg-[#387ADF] py-2 rounded-3xl px-2">
+                            <div class="cursor-pointer flex justify-between items-center bg-[#4349ff] py-2 rounded-3xl px-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" viewBox="0 0 32 32">
                                     <path fill="white"
                                         d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15Zm6.799-16L16 14.784L6.201 8Z" />

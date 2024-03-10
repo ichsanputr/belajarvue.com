@@ -75,7 +75,7 @@ setInterval(() => {
                 <input
                     class="py-4 w-full shadow appearance-none rounded px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="password" type="text" :placeholder="$t('enter_your_password')">
-                <button class="bg-[#387ADF] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">{{ $t('sign_up')
+                <button class="bg-[#4349ff] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">{{ $t('sign_up')
                     }}</button>
                 <span class="font-light text-sm">{{ $t('accept_tos') }}</span>
                 <div class="my-5 text-base">{{ $t('register_option') }}</div>
@@ -90,8 +90,9 @@ setInterval(() => {
                         <Facebook />
                     </div>
                 </div>
-                <div class="mt-4 text-light text-[16px]">{{ $t('already_register') }}<a class="ml-1"
-                        href="https://www.google.com">Login</a></div>
+                <div class="mt-4 text-light text-[16px]">{{ $t('already_register') }}
+                    <span class="underline text-[#4349ff] cursor-pointer" @click="$router.push('/login')">Login</span>
+                </div>
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ const rating = ref(0)
                     <div class="ml-2 text-[14px] font-normal underline">21 Rating</div>
                 </div>
                 <div
-                    class="cursor-pointer bg-[#387ADF] py-2 px-10 text-sm mt-6 shadow text-white font-semibold rounded-lg w-fit">
+                    class="cursor-pointer bg-[#4349ff] py-2 px-10 text-sm mt-6 shadow text-white font-semibold rounded-lg w-fit">
                     {{ $t('start') }}
                 </div>
             </div>
