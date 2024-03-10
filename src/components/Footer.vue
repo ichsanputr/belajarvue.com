@@ -28,9 +28,9 @@ import Instagram from './Icons/Instagram.vue';
                             <li>Series</li>
                         </ul>
                         <div class="font-semibold text-[16px] mt-6">Terms of Service</div>
-                        <ul>
+                        <ul class="cursor-pointer">
                             <li>Privacy Policy</li>
-                            <li>Disclaimer</li>
+                            <li @click="$router.push('/disclaimer')">Disclaimer</li>
                             <li>Terms & Conditions</li>
                         </ul>
                     </div>
