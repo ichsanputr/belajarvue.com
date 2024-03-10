@@ -25,5 +25,7 @@
     "subscribe": "Subscribe",
 
     "article_list_description": "All articles that have been published, whether included in a series or not.",
-    "start": "Start"
+    "start": "Start",
+    "save": "Save",
+    "share": "Share"
 }

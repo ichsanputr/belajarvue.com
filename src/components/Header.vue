@@ -41,12 +41,12 @@ const headerClass = computed(() => {
 
 <template>
     <header class="sticky top-0 z-50" :class="headerClass">
-        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[85%]">
+        <div v-if="windowWidth > 600" class="flex justify-between items-center py-4 mx-auto w-[90%]">
             <span @click="$router.push('/')" class="cursor-pointer font-semibold text-xl">BelajarVue.com _< </span>
                     <div class="flex justify-between items-center">
-                        <span class="cursor-pointer">{{ $t('home') }}</span>
-                        <span class="mx-6 cursor-pointer">Series</span>
-                        <span class="cursor-pointer">{{ $t('article') }}</span>
+                        <span @click="$router.push('/')" class="cursor-pointer">{{ $t('home') }}</span>
+                        <span @click="$router.push('/series')" class="mx-6 cursor-pointer">Series</span>
+                        <span @click="$router.push('/article')" class="cursor-pointer">{{ $t('article') }}</span>
                         <span class="ml-6 mr-3 cursor-pointer">Challenge</span>
                         <span class="mx-4">|</span>
                         <Lang class="mx-2" :is-sticky="stickyActive" />
@@ -56,7 +56,7 @@ const headerClass = computed(() => {
         </div>
         <!-- Header Mobile -->
         <div v-else class="flex justify-between items-center px-4 py-3">
-            <div class="font-semibold text-lg">BelajarVue.com _< </div>
+            <div @click="$router.push('/')" class="font-semibold text-lg">BelajarVue.com _< </div>
                     <div class="flex items-center">
                         <Lang class="mr-3" :is-sticky="stickyActive" />
                         <div class="drawer drawer-end">
@@ -92,13 +92,13 @@ const headerClass = computed(() => {
                                         </svg>
                                     </label>
                                     <ul class="text-base-content">
-                                        <li><a>
+                                        <li><a @click="$router.push('/')">
                                                 <Home /> Home
                                             </a></li>
-                                        <li><a>
+                                        <li><a @click="$router.push('/article')">
                                                 <Article /> {{ $t('article') }}
                                             </a></li>
-                                        <li><a>
+                                        <li><a @click="$router.push('/series')">
                                                 <Series /> Series
                                             </a></li>
                                         <li><a>

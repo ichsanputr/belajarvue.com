@@ -9,3 +9,32 @@ body {
 a {
     color: #387ADF;
 }
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.4rem;
+    }
+}

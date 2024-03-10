@@ -15,7 +15,7 @@
                         pembuatan model, controller, dan komponen aplikasi....</div>
                 </div>
             </div>
-            <div @click="$router.push('/articles')" class="cursor-pointer float-right mx-8 md:mx-0 text-[#387ADF] md:text-[16px] text-[14px] font-medium flex items-center mt-0 md:mt-3 hover:bg-[white] hover:shadow px-2 py-2 rounded-lg">
+            <div @click="$router.push('/article')" class="cursor-pointer float-right mx-8 md:mx-0 text-[#387ADF] md:text-[16px] text-[14px] font-medium flex items-center mt-0 md:mt-3 hover:bg-[white] hover:shadow px-2 py-2 rounded-lg">
                 <span class="mr-1">{{ $t('see_more') }}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
                     <path fill="currentColor"
