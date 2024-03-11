@@ -1,17 +1,21 @@
 <script setup>
-import Header from '../components/Header.vue'
+import { useHead } from '@unhead/vue'
+import LayoutDefault from '../layouts/Default.vue'
 import Login from '../components/Login.vue'
-import Footer from '../components/Footer.vue'
 
 import { onMounted } from 'vue'
 
 onMounted(() => {
   window.scrollTo(0,0)
 })
+
+useHead({
+    title: "Login - Belajarvue" 
+})
 </script>
 
 <template>
-  <Header />
-  <Login />
-  <Footer />
+  <LayoutDefault>
+    <Login/>
+  </LayoutDefault>
 </template>

@@ -44,7 +44,7 @@ setInterval(() => {
             <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-10">
                 <h1
                     class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] shadow">
-                    {{ $t('hero_title') }}
+                    Platform Belajar Vue Js
                 </h1>
                 <div
                     class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] mt-3 shadow flex items-center">
@@ -77,20 +77,20 @@ setInterval(() => {
                     id="password" type="text" :placeholder="$t('enter_your_password')">
                 <button class="bg-[#4349ff] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">{{ $t('sign_up')
                     }}</button>
-                <span class="font-light text-sm">{{ $t('accept_tos') }}</span>
-                <div class="my-5 text-base">{{ $t('register_option') }}</div>
+                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan Privasi BelajarVue.</span>
+                <div class="my-5 text-sm">Atau daftar dengan:</div>
                 <div class="flex">
-                    <div class="bg-white border border-black px-3 py-3 rounded-lg cursor-pointer">
-                        <Google />
+                    <div class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                        <Google class="w-[16px] md:w-[20px]" />
                     </div>
-                    <div class="bg-white border mx-3 border-black px-3 py-3 rounded-lg cursor-pointer">
-                        <Github />
+                    <div class="bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                        <Github class="w-[16px] md:w-[20px]" />
                     </div>
-                    <div class="bg-white border border-black px-3 py-3 rounded-lg cursor-pointer">
-                        <Facebook />
+                    <div class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                        <Facebook class="w-[16px] md:w-[20px]" />
                     </div>
                 </div>
-                <div class="mt-4 text-light text-[16px]">{{ $t('already_register') }}
+                <div class="mt-4 text-light text-sm">Sudah memiliki akun?
                     <span class="underline text-[#4349ff] cursor-pointer" @click="$router.push('/login')">Login</span>
                 </div>
             </div>

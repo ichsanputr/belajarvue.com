@@ -29,9 +29,9 @@ import Instagram from './Icons/Instagram.vue';
                         </ul>
                         <div class="font-semibold text-[16px] mt-6">Terms of Service</div>
                         <ul class="cursor-pointer">
-                            <li>Privacy Policy</li>
+                            <li @click="$router.push('/privacy-policy')">Privacy Policy</li>
                             <li @click="$router.push('/disclaimer')">Disclaimer</li>
-                            <li>Terms & Conditions</li>
+                            <li @click="$router.push('/terms')">Terms & Conditions</li>
                         </ul>
                     </div>
                     <div class="block mt-5 md:mt-0">
@@ -54,7 +54,7 @@ import Instagram from './Icons/Instagram.vue';
                                         d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15Zm6.799-16L16 14.784L6.201 8Z" />
                                     <circle cx="26" cy="24" r="4" fill="white" />
                                 </svg>
-                                <div class="text-white ml-1">{{ $t('subscribe') }}</div>
+                                <div class="text-white ml-1">Langganan</div>
                             </div>
                         </div>
                     </div>

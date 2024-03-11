@@ -97,7 +97,7 @@ const headerClass = computed(() => {
                                 </div>
                                 <hr>
                                 <ul>
-                                    <li><a>Login</a></li>
+                                    <li><a @click="$router.push('/login')">Login</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@unhead/vue": "^1.8.12",
     "daisyui": "^4.7.2",
     "pinia": "^2.1.7",
     "vite-plugin-pages": "^0.32.0",
