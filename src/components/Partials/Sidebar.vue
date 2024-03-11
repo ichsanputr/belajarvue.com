@@ -1,11 +1,10 @@
 <script setup>
-import { defineProps, ref } from 'vue'
 import Share from '../Icons/Share.vue';
 import Bookmark from '../Icons/Bookmark.vue';
 import Checked from '../Icons/Checked.vue';
 </script>
 <template>
-    <div class="block md:sticky top-24 md:px-8 px-0">
+    <div class="block md:sticky top-24 md:px-12 px-0">
         <div class="flex items-center">
             <div class="px-3 py-2 flex rounded-lg border border-black mr-3">
                 <Share class="mr-1"/>
