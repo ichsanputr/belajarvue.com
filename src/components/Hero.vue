@@ -39,17 +39,17 @@ setInterval(() => {
                         src="../assets/images/typescript.png" />
                 </div>
             </div>
-            <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-10">
+            <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-[4rem]">
                 <h1
                     class="px-3 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[36px] font-bold bg-[#FBEEE4] shadow">
                     Belajarvue.com
                 </h1>
                 <h2
-                    class="mt-4 px-3 py-2 text-wrap max-[380px]:text-[12px] md:text-[16px] font-normal bg-[#FBEEE4] shadow">
+                    class="mt-6 px-3 py-2 text-wrap max-[380px]:text-[14px] text-[16px] md:text-[16px] font-normal bg-[#FBEEE4] shadow">
                     Platform belajar Vue JS bahasa indonesia berbasis artikel dan series ditambah dengan fitur tantangan
                     koding yang seru.
                 </h2>
-                <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">Buat
+                <div class="mt-6 bg-black px-3 py-2 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">Buat
                     akun untuk menikmati semua fitur di website ini
                 </div>
                 <div class="bg-black px-3 py-2 max-[380px]:text-[12px] text-white w-fit text-sm shadow">

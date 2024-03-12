@@ -20,7 +20,13 @@ onMounted(async () => {
 async function register() {
     validateForm()
     if (!errName.value && !errEmail.value && !errPassword.value) {
-        axios.post('/register', form)
+        try {
+            const { data } = await axios.post('/register', form)
+        } catch (err) {
+            if (err.response.data == 'USER_REGISTERED') {
+                errEmail.value = true
+            }
+        }
     }
 }
 
@@ -37,6 +43,12 @@ function validateForm() {
         errEmail.value = false
     } else {
         errEmail.value = true
+    }
+
+    if (form.password.length > 6 && form.password.length < 21) {
+        errPassword.value = false
+    } else {
+        errPassword.value = true
     }
 }
 </script>
@@ -60,23 +72,32 @@ function validateForm() {
                 <div class="label">
                     <span class="label-text font-medium">Email</span>
                 </div>
-                <input v-model="form.email" type="text" placeholder="Masukkan email Anda" class="input input-bordered w-full" />
+                <input v-model="form.email" type="text" placeholder="Masukkan email Anda"
+                    class="input input-bordered w-full" :class="{ 'border-red-400 border': errEmail }" />
                 <div class="label">
-                    <span class="label-text-alt" :class="errEmail ? 'text-[red]' : 'text-black'">Pastikan email valid</span>
+                    <span class="label-text-alt" :class="errEmail ? 'text-[red]' : 'text-black'">Pastikan email
+                        valid & belum terdaftar</span>
                 </div>
             </label>
             <label class="form-control w-full">
                 <div class="label">
                     <span class="label-text font-medium">Password</span>
                 </div>
-                <input type="password" minlength="6" placeholder="••••••" maxlength="20" class="input input-bordered w-full" />
+                <label class="input input-bordered flex items-center gap-2">
+                    <input v-model="form.password" type="password" minlength="6" placeholder="••••••" maxlength="20"
+                        class="w-full" :class="{ 'border-red-400 border': errPassword }" />
+                    <span class="badge badge-info">Optional</span>
+                </label>
                 <div class="label">
-                    <span class="label-text-alt">Minimal 6 huruf, bebas mengandung karakter apapun</span>
+                    <span class="label-text-alt" :class="errPassword ? 'text-[red]' : 'text-black'">Minimal 6 huruf,
+                        bebas mengandung karakter apapun</span>
                 </div>
             </label>
             <div class="mt-4">
-                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan
-                    Privasi BelajarVue.</span>
+                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui <span
+                        class="text-[#4349FF] underline" @click="$router.push('/privacy-policy')">Terms of Service
+                    </span> & <span class="text-[#4349FF] underline" @click="$router.push('/privacy-policy')">Privacy
+                        Policy</span> BelajarVue.</span>
             </div>
             <button @click="register"
                 class="bg-[#4349ff] py-2 text-white font-medium rounded-md text-sm mt-4 mb-4 w-[100px]">Daftar</button>
