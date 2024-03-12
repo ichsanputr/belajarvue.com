@@ -1,14 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
-import Vue from './Icons/Vue.vue';
-import { useI18n } from 'vue-i18n';
-
+const router = useRouter()
 const matery = ref(['Vue.js 2', 'Pinia State Manegement', 'Nuxt.js 2', 'Vuex', 'Quasar', 'Vue.js 3', 'Nuxt.js 3', 'Supabase'])
 const currentMatery = ref(0)
-const { locale } = useI18n({ useScope: 'global' })
 const windowWidth = ref(null)
 
 onMounted(() => {
@@ -47,8 +45,8 @@ setInterval(() => {
                     Belajarvue.com
                 </h1>
                 <h2
-                    class="mt-4 px-3 py-2 text-wrap max-[380px]:text-[12px] md:text-[16px] font-medium bg-[#FBEEE4] shadow">
-                    Platform Belajar Vue JS bahasa indonesia berbasis artikel dan series ditambah dengan fitur tantangan
+                    class="mt-4 px-3 py-2 text-wrap max-[380px]:text-[12px] md:text-[16px] font-normal bg-[#FBEEE4] shadow">
+                    Platform belajar Vue JS bahasa indonesia berbasis artikel dan series ditambah dengan fitur tantangan
                     koding yang seru.
                 </h2>
                 <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">Buat
