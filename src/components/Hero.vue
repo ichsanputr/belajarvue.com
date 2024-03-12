@@ -43,16 +43,16 @@ setInterval(() => {
             </div>
             <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-10">
                 <h1
-                    class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] shadow">
-                    Platform Belajar Vue Js
+                    class="px-3 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[36px] font-bold bg-[#FBEEE4] shadow">
+                    Belajarvue.com
                 </h1>
-                <div
-                    class="px-4 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[40px] font-bold bg-[#FBEEE4] mt-3 shadow flex items-center">
-                    <span class="mr-1">{{ $t('most_equipped') }}</span>
-                    <Vue class="flex md:hidden" v-if="locale == 'id'" />
-                </div>
-                <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">{{
-                $t('hero_description') }}
+                <h2
+                    class="mt-4 px-3 py-2 text-wrap max-[380px]:text-[12px] md:text-[16px] font-medium bg-[#FBEEE4] shadow">
+                    Platform Belajar Vue JS bahasa indonesia berbasis artikel dan series ditambah dengan fitur tantangan
+                    koding yang seru.
+                </h2>
+                <div class="bg-black px-3 py-2 mt-6 mb-3 max-[380px]:text-[12px] text-white w-fit text-sm shadow">Buat
+                    akun untuk menikmati semua fitur di website ini
                 </div>
                 <div class="bg-black px-3 py-2 max-[380px]:text-[12px] text-white w-fit text-sm shadow">
                     <span>{{ matery[currentMatery] }}</span>
@@ -77,16 +77,20 @@ setInterval(() => {
                     id="password" type="text" :placeholder="$t('enter_your_password')">
                 <button class="bg-[#4349ff] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">{{ $t('sign_up')
                     }}</button>
-                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan Privasi BelajarVue.</span>
+                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan
+                    Privasi BelajarVue.</span>
                 <div class="my-5 text-sm">Atau daftar dengan:</div>
                 <div class="flex">
-                    <div class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                    <div
+                        class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Google class="w-[16px] md:w-[20px]" />
                     </div>
-                    <div class="bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                    <div
+                        class="bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Github class="w-[16px] md:w-[20px]" />
                     </div>
-                    <div class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                    <div
+                        class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Facebook class="w-[16px] md:w-[20px]" />
                     </div>
                 </div>

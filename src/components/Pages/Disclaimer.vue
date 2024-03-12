@@ -1,7 +1,7 @@
 <template>
     <div class="w-full bg-[#FBEEE4] py-10">
         <div class="md:w-[70%] mx-auto">
-            <h1 class="font-medium mb-4">Disclaimer - Belajarvue</h1>
+            <h1 class="font-semibold mb-4">Disclaimer</h1>
 
             <p>Semua informasi di situs web ini - belajarvue.com - dipublikasikan dengan itikad baik dan hanya
                 untuk
@@ -25,13 +25,13 @@
                 Kebijakan Privasi situs-situs ini serta "Ketentuan Layanan" mereka sebelum terlibat dalam bisnis apa pun
                 atau mengunggah informasi apa pun.</p>
 
-            <h2 class="font-medium">Persetujuan</h2>
+            <h2 class="font-semibold">Persetujuan</h2>
 
             <p>Dengan menggunakan situs web kami, Anda dengan ini menyetujui disclaimer kami dan menyetujui
                 persyaratannya.
             </p>
 
-            <h2 class="font-medium">Pembaruan</h2>
+            <h2 class="font-semibold">Pembaruan</h2>
 
             <p>Jika kami memperbarui, mengubah, atau membuat perubahan apa pun pada dokumen ini, perubahan tersebut akan
                 diposting secara jelas di sini.</p>

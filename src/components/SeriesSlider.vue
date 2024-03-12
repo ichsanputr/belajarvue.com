@@ -16,9 +16,8 @@ onMounted(async () => {
 <template>
     <div class="bg-[#10162F] py-8">
         <div class="w-[85%] mx-auto mt-4 mb-8">
-            <h2 class="text-white font-medium text-[20px]">Ingin belajar apa hari ini?</h2>
-            <p class="text-white text-[14px] mt-2">Hei, ada banyak pilihan menarik di sini, loh! Yuk, temukan sesuatu
-                yang seru untuk dipelajari.</p>
+            <h2 class="text-white font-medium text-[20px] mb-1">Ingin belajar apa hari ini?</h2>
+            <p class="text-white text-[14px]">Belajar materi secara bertahap dengan kumpulan artikel yang berkelanjutan dalam bentuk series.</p>
         </div>
         <div class="flex w-full justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
             <div v-for="(i,index) in 15" :class="{'ml-10' : index == 0}"
@@ -29,10 +28,10 @@ onMounted(async () => {
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </div>
                 </div>
-                <div class="absolute top-[-5px] bg-[#EAFDC6] w-full rounded-t-md text-center font-medium py-1">
-                    12 article
+                <div class="absolute top-[-5px] bg-[#EAFDC6] w-full rounded-t-lg text-center font-medium py-1">
+                    12 artikel
                 </div>
-                <div class="absolute text-[14px] bottom-0 w-full rounded-b-md px-4 pb-2 border-t-2 border-dotted font-medium py-1">
+                <div class="absolute text-[14px] bottom-0 w-full rounded-b-lg px-4 pb-2 border-t-2 border-dotted font-medium py-1">
                     Vue.js 3, Supabase, Firebase, Pinia
                 </div>
             </div>

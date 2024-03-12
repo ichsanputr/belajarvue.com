@@ -22,10 +22,10 @@ import Instagram from './Icons/Instagram.vue';
                     </div>
                     <div class="block mt-6 md:mt-0">
                         <div class="font-semibold text-[16px]">Indeks</div>
-                        <ul>
+                        <ul class="cursor-pointer">
                             <li>Challenge</li>
-                            <li>{{ $t('article') }}</li>
-                            <li>Series</li>
+                            <li @click="$router.push('/article')">Artikel</li>
+                            <li @click="$router.push('/series')">Series</li>
                         </ul>
                         <div class="font-semibold text-[16px] mt-6">Terms of Service</div>
                         <ul class="cursor-pointer">
@@ -37,18 +37,32 @@ import Instagram from './Icons/Instagram.vue';
                     <div class="block mt-5 md:mt-0">
                         <div class="font-semibold text-[16px]">{{ $t('contact') }}</div>
                         <ul>
-                            <li>Instagram</li>
-                            <li>Facebook</li>
-                            <li>Email</li>
-                            <li>Instagram</li>
+                            <li>
+                                <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank">
+                                    Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-black" href="https://www.facebook.com/ichsanputr/" target="_blank">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li><a class="text-black" href="mailto:ichsanfadhil67@gmail.com" target="_blank">
+                                    Email
+                                </a></li>
+                            <li><a class="text-black" href="https://twitter.com/needsannn" target="_blank">
+                                    Twitter
+                                </a></li>
                         </ul>
                     </div>
-                    <div class="block mt-5 md:mt-0 col-span-2">
+                    <div class="block mt-5 md:mt-0 col-span-2 pb-6">
                         <div class="font-semibold text-[16px]">{{ $t('newsletter') }}</div>
                         <div class="font-light text-[14px] my-4 mb-5">{{ $t('newsletter_description') }}</div>
-                        <div class="w-full md:w-[75%] flex justify-between items-center bg-white py-2 rounded-3xl px-2 text-[14px] bprder border-black shadow">
+                        <div
+                            class="w-full md:w-[75%] flex justify-between items-center bg-white py-2 rounded-3xl px-2 text-[14px] bprder border-black shadow">
                             <input class="pl-3 outline-none" placeholder="Email Address" />
-                            <div class="cursor-pointer flex justify-between items-center bg-[#4349ff] py-2 rounded-3xl px-2">
+                            <div
+                                class="cursor-pointer flex justify-between items-center bg-[#4349ff] py-2 rounded-3xl px-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" viewBox="0 0 32 32">
                                     <path fill="white"
                                         d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15Zm6.799-16L16 14.784L6.201 8Z" />
@@ -62,7 +76,7 @@ import Instagram from './Icons/Instagram.vue';
                 <div class="border-t border-slate-300 mt-5" />
                 <div class="block md:flex justify-between py-4 px-4 md:px-0 md:py-8 mx-2 md:mx-0">
                     <div class="text-[14px] mb-1 md:mb-0">© Copyright 2024 Belajarvue. All rights reserved.</div>
-                    <div class="text-[14px]">Made with ❤️ by Muhammad Ichsan</div>
+                    <div class="text-[14px]">Made with ❤️ by <a href="">Muhammad Ichsan</a></div>
                 </div>
             </div>
         </div>
