@@ -40,7 +40,7 @@ import Facebook from './Icons/Facebook.vue';
                 </div>
             </div>
             <div class="mt-4">
-                <span class="text-sm">Belum mempunyai akun? <span class="underline text-[#4349ff] cursor-pointer" @click="$router.push('/daftar')">Daftar</span></span>
+                <span class="text-sm">Belum mempunyai akun? <span class="underline text-[#4349ff] cursor-pointer" @click="$router.push('/signup')">Daftar</span></span>
             </div>
         </div>
     </div>
