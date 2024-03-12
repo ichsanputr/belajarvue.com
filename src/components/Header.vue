@@ -19,6 +19,7 @@ import Profile from './Icons/Profile.vue';
 const router = useRoute()
 const stickyActive = ref(false)
 const windowWidth = ref(null)
+const headerReady = ref(false)
 
 onMounted(async () => {
     windowWidth.value = window.innerWidth
@@ -32,6 +33,8 @@ onMounted(async () => {
             stickyActive.value = false
         }
     });
+
+    headerReady.value = true
 })
 
 const headerClass = computed(() => {
@@ -53,7 +56,7 @@ const headerClass = computed(() => {
             <button>close</button>
         </form>
     </dialog>
-    <header class="sticky top-0 z-30" :class="headerClass">
+    <header class="sticky top-0 z-30" :class="headerClass" v-if="headerReady">
         <div v-if="windowWidth > 600" class="flex justify-between items-center py-3 mx-auto w-[90%]">
             <span @click="$router.push('/')" class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
                     <div class="flex justify-between items-center text-sm">
