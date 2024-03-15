@@ -14,13 +14,10 @@ onMounted(() => {
 useHead({
     title: "Belajarvue - Platform Belajar Vue Js Bahasa Indonesia" 
 })
-
-const base_url = import.meta.env.VITE_BASE_URL_API
 </script>
 
 <template>
   <LayoutDefault>
-    {{ base_url }}
     <Hero />
     <SeriesSlider />
     <ArticlesLatest />
