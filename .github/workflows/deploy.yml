@@ -21,6 +21,7 @@ concurrency:
 
 env:
   VITE_ENV_TEST: ${{ secrets.VITE_ENV_TEST }}
+  VITE_BASE_URL_API: ${{ secrets.VITE_BASE_URL_API }}
 
 jobs:
   # Single deploy job since we're just deploying
