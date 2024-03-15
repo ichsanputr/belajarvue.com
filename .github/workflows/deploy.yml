@@ -20,7 +20,6 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  VITE_ENV_TEST: ${{ secrets.VITE_ENV_TEST }}
   VITE_BASE_URL_API: ${{ secrets.VITE_BASE_URL_API }}
 
 jobs:
