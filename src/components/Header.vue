@@ -1,6 +1,7 @@
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 import { onMounted, computed, ref } from 'vue';
+import { useJwt } from '@vueuse/integrations/useJwt'
 
 import Search from './Icons/Search.vue';
 import Night from './Icons/Night.vue';
@@ -12,14 +13,18 @@ import Series from './Icons/Series.vue';
 import Home from './Icons/Home.vue';
 import Challenge from './Icons/Challenge.vue';
 import Login from './Icons/Login.vue';
-import User from './Icons/User.vue';
 import Website from './Icons/Website.vue';
 import Profile from './Icons/Profile.vue';
+import ProfileName from './Partials/ProfileName.vue';
+import { useTokenStore } from '@/stores/token'
 
-const router = useRoute()
+const tokenStore = useTokenStore()
 const stickyActive = ref(false)
 const windowWidth = ref(null)
 const headerReady = ref(false)
+const hideDropdown = ref(false)
+const name = ref('')
+const router = useRouter()
 
 onMounted(async () => {
     windowWidth.value = window.innerWidth
@@ -34,6 +39,7 @@ onMounted(async () => {
         }
     });
 
+    decodeToken()
     headerReady.value = true
 })
 
@@ -44,6 +50,18 @@ const headerClass = computed(() => {
 
     return 'bg-[#fbeee4]'
 })
+
+function logout() {
+    tokenStore.token = ""
+    hideDropdown.value = false
+    decodeToken()
+    window.location.href = '/'
+}
+
+function decodeToken() {
+    const { payload } = useJwt(tokenStore.token)
+    name.value = payload.value?.username
+}
 </script>
 
 <template>
@@ -69,7 +87,7 @@ const headerClass = computed(() => {
                         <Search onclick="search_modal.showModal()" class="ml-2 cursor-pointer" />
                         <div class="dropdown dropdown-bottom dropdown-end">
                             <div tabindex="0" role="button">
-                                <Theme class="mx-4 cursor-pointer" v-if="router.path != '/'" />
+                                <Theme class="mx-4 cursor-pointer" />
                             </div>
                             <ul tabindex="0"
                                 class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[9rem]">
@@ -88,20 +106,28 @@ const headerClass = computed(() => {
                             </ul>
                         </div>
                         <div class="dropdown dropdown-bottom dropdown-end">
-                            <div tabindex="0" role="button">
-                                <User class="cursor-pointer" v-if="router.path != '/'" />
+                            <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
+                                <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
+                                    class="cursor-pointer ml-1" />
+                                <Profile v-else class="cursor-pointer" />
                             </div>
-                            <div tabindex="0"
-                                class="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-[12rem]">
-                                <div class="flex items-center my-3 px-3">
-                                    <Profile class="flex-none mr-1" />
-                                    <span class="font-medium">Siapa kamu?</span>
+                            <Transition>
+                                <div v-if="hideDropdown" tabindex="0"
+                                    class="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-[12rem]">
+                                    <div class="flex items-center my-3 px-3">
+                                        <span v-if="name" class="font-medium">Halo {{ name }}
+                                            👋</span>
+                                        <span v-else class="font-medium">Siapa kamu?</span>
+                                    </div>
+                                    <hr>
+                                    <ul v-if="!name">
+                                        <li><a @click="$router.push('/login')">Login</a></li>
+                                    </ul>
+                                    <ul v-else>
+                                        <li><a @click="logout">Logout</a></li>
+                                    </ul>
                                 </div>
-                                <hr>
-                                <ul>
-                                    <li><a @click="$router.push('/login')">Login</a></li>
-                                </ul>
-                            </div>
+                            </Transition>
                         </div>
                     </div>
         </div>
@@ -199,5 +225,17 @@ a {
 
 .rounded-box {
     border-radius: 12px !important;
+}
+</style>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
 }
 </style>

@@ -34,8 +34,13 @@ import Instagram from './Icons/Instagram.vue';
                             <li @click="$router.push('/terms')">Terms & Conditions</li>
                         </ul>
                     </div>
-                    <div class="block mt-5 md:mt-0">
-                        <div class="font-semibold text-[16px]">{{ $t('contact') }}</div>
+                    <div class="block mt-6 md:mt-0">
+                        <div class="font-semibold text-[16px]">Platform</div>
+                        <ul class="cursor-pointer">
+                            <li @click="$router.push('/article')">Belajarvue.com</li>
+                            <li @click="$router.push('/series')">Belajardekstopdev.com</li>
+                        </ul>
+                        <div class="font-semibold text-[16px] mt-6">{{ $t('contact') }}</div>
                         <ul>
                             <li>
                                 <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank">
@@ -55,7 +60,7 @@ import Instagram from './Icons/Instagram.vue';
                                 </a></li>
                         </ul>
                     </div>
-                    <div class="block mt-5 md:mt-0 col-span-2 pb-6">
+                    <div class="block mt-6 md:mt-0 col-span-2 pb-6">
                         <div class="font-semibold text-[16px]">{{ $t('newsletter') }}</div>
                         <div class="font-light text-[14px] my-4 mb-5">{{ $t('newsletter_description') }}</div>
                         <div

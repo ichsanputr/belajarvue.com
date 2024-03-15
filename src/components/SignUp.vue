@@ -2,7 +2,12 @@
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
-import { onMounted, inject, ref, reactive } from 'vue';
+import { inject, ref, reactive } from 'vue';
+import { useRouter } from 'vue-router';
+import { useTokenStore } from '@/stores/token'
+
+const tokenStore = useTokenStore()
+const router = useRouter()
 
 const axios = inject('axios')
 const form = reactive({
@@ -15,31 +20,36 @@ const errEmail = ref(false)
 const errPassword = ref(false)
 const showPassword = ref(false)
 const loadingSignup = ref(false)
-
-onMounted(async () => {
-})
+const otp = ref()
+const otpSection = ref(false)
+const loadingVerification = ref(false)
+const errVerificationCode = ref(false)
 
 async function register() {
     validateForm()
     if (!errName.value && !errEmail.value && !errPassword.value) {
         loadingSignup.value = true
         try {
-            const { data } = await axios.post('/register', form)
+            await axios.post('/register', form)
+            setTimeout(() => {
+                loadingSignup.value = false
+                otpSection.value = true
+            }, 500)
         } catch (err) {
             if (err.response.data == 'USER_REGISTERED') {
-                errEmail.value = true
+                setTimeout(() => {
+                    loadingSignup.value = false
+                    errEmail.value = true
+                }, 500)
             }
         }
-        setTimeout(() => {
-            loadingSignup.value = false
-        }, 1000)
     }
 }
 
 function validateForm() {
     let regexEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
-    if (/\s/g.test(form.name)) {
+    if (/\s/g.test(form.name) || form.name.length == 0) {
         errName.value = true
     } else {
         errName.value = false
@@ -57,17 +67,37 @@ function validateForm() {
         errPassword.value = true
     }
 }
+
+async function verification() {
+    loadingVerification.value = true
+    try {
+        const { data: { token } } = await axios.post('/verification', {
+            email: form.email,
+            code: otp.value
+        })
+
+        tokenStore.token = token
+        router.push('/')
+    } catch (err) {
+        errVerificationCode.value = true
+    }
+    loadingVerification.value = false
+}
+
+const handleOtpComplete = (value) => {
+    otp.value = value
+}
 </script>
 
 <template>
     <div class="bg-dotted py-10 md:py-14 border-t border-slate-300">
-        <div class="mx-auto max-[900px]:w-[90%] md:w-[60%] xl:w-[35%]">
+        <div v-if="!otpSection" class="mx-auto max-[900px]:w-[90%] md:w-[60%] xl:w-[35%]">
             <h1 class="font-semibold">Buat akun Belajarvue.com</h1>
             <label class="form-control w-full mt-4">
                 <div class="label">
                     <span class="label-text font-medium">Username</span>
                 </div>
-                <input :class="{ 'border-2 border-red-300': errName }" v-model="form.name" type="text" maxlength="16"
+                <input :class="{ 'border-2 border-red-300': errName }" v-model="form.name" type="text" maxlength="12"
                     placeholder="Masukkan nama Anda" class="border input input-bordered w-full" />
                 <div class="label">
                     <span class="label-text-alt" :class="{ 'text-[red]': errName }">Username tidak boleh mengandung
@@ -89,13 +119,14 @@ function validateForm() {
                 <div class="label">
                     <span class="label-text font-medium">Password</span>
                 </div>
-                <label class="input input-bordered flex items-center gap-2" :class="{ 'border-red-400 border': errPassword }">
-                    <input v-if="showPassword" v-model="form.password" type="password" minlength="6" placeholder="••••••" maxlength="20"
-                        class="w-full outline-none" />
+                <label class="input input-bordered flex items-center gap-2"
+                    :class="{ 'border-red-400 border': errPassword }">
+                    <input v-if="!showPassword" v-model="form.password" type="password" minlength="6"
+                        placeholder="••••••" maxlength="20" class="w-full outline-none" />
                     <input v-else v-model="form.password" type="text" minlength="6" placeholder="••••••" maxlength="20"
                         class="w-full outline-none" />
                     <div class="cursor-pointer" @click="showPassword = !showPassword">
-                        <svg v-if="showPassword" xmlns="http://www.w3.org/2000/svg" width="1.3em" viewBox="0 0 24 24">
+                        <svg v-if="!showPassword" xmlns="http://www.w3.org/2000/svg" width="1.3em" viewBox="0 0 24 24">
                             <g fill="none">
                                 <path
                                     d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
@@ -116,8 +147,10 @@ function validateForm() {
             </label>
             <div class="mt-4">
                 <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui <span
-                        class="text-[#4349FF] underline cursor-pointer" @click="$router.push('/privacy-policy')">Terms of Service
-                    </span> & <span class="text-[#4349FF] underline cursor-pointer" @click="$router.push('/privacy-policy')">Privacy
+                        class="text-[#4349FF] underline cursor-pointer" @click="$router.push('/privacy-policy')">Terms
+                        of Service
+                    </span> & <span class="text-[#4349FF] underline cursor-pointer"
+                        @click="$router.push('/privacy-policy')">Privacy
                         Policy</span> BelajarVue.</span>
             </div>
             <button @click="register"
@@ -141,6 +174,28 @@ function validateForm() {
                     class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                     <Facebook class="w-[16px] md:w-[20px]" />
                 </div>
+            </div>
+        </div>
+        <div v-else class="mx-auto py-8 max-[900px]:w-[90%] md:w-[60%] xl:w-[35%]">
+            <h1 class="font-semibold">Verifikasi Email</h1>
+            <div class="w-full mt-6">
+                <v-otp-input ref="otpInput"
+                    input-classes="w-[56px] shadow rounded-md mr-3 h-[56px] text-[18px] block pl-[22px]" separator=""
+                    inputType="numeric" :num-inputs="5" :should-auto-focus="true" @on-complete="handleOtpComplete"
+                    :should-focus-order="true" :placeholder="[]" />
+            </div>
+            <div class="mt-4">
+                <span class="font-light text-sm">Masukkan 5 digit kode yang telah kami kirim ke emailmu, belum menerima
+                    kode verifikasi? <span class="ml-[2px] font-medium underline text-[#4349FF]">Kirim
+                        ulang</span></span>
+            </div>
+            <button @click="register"
+                class="bg-[#4349ff] py-2 text-white font-medium rounded-md text-sm mt-4 mb-2 w-[100px]">
+                <span v-if="!loadingVerification" @click="verification">Verifikasi</span>
+                <span v-else class="loading loading-spinner loading-xs"></span>
+            </button>
+            <div v-if="errVerificationCode">
+                <span class="text-[red] label-text-alt">Kode yang anda masukkan sepertinya salah</span>
             </div>
         </div>
     </div>
