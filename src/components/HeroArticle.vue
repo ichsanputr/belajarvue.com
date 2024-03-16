@@ -6,6 +6,7 @@ import Sidebar from './Partials/Sidebar.vue';
 import Exchange from './Icons/Exchange.vue';
 import ArrowLeft from './Icons/ArrowLeft.vue';
 import ArrowRight from './Icons/ArrowRight.vue';
+import CodeHighlighter from './Partials/CodeHighlighter.vue';
 
 const showArrowLeft = ref(false)
 const showArrowRight = ref(false)
@@ -70,6 +71,10 @@ function decreaseScrollRecomendation() {
                     sendiri di dalam dashboard nya.</p>
                 <h2 class="font-semibold">Setup Nginx Template</h2>
                 <p v-for="i in 7">Dalam artikel ini kita akan belajar bagaimana cara men-deploy Next.js App menggunakan
+                    Laravel Forge. Tentu ini sangat mudah dilakukan karena pada dasarnya, kita sendiri bisa membuat
+                    template nginx sendiri di dalam dashboard nya.</p>
+                <CodeHighlighter lang="php" code="echo 'hello world';" />
+                <p v-for="i in 2">Dalam artikel ini kita akan belajar bagaimana cara men-deploy Next.js App menggunakan
                     Laravel Forge. Tentu ini sangat mudah dilakukan karena pada dasarnya, kita sendiri bisa membuat
                     template nginx sendiri di dalam dashboard nya.</p>
                 <div class="divider text-sm py-9 font-medium">Selesai 🎉</div>
