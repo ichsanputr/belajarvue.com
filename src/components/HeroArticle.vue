@@ -41,7 +41,7 @@ function decreaseScrollRecomendation() {
 <template>
     <div class="bg-[#FBEEE4] pb-10">
         <div class="bg-dotted flex justify-center items-center relative py-10 border-b border-slate-300">
-            <div class="mx-auto w-[75%] h-fit my-auto block max-w-screen-xl">
+            <div class="mx-auto w-[90%] md:w-[75%] h-fit my-auto block max-w-screen-xl">
                 <p class="bg-[#FBEEE4] shadow px-4 py-2 w-fit text-xs md:text-sm">Senin, 18 September 2023</p>
                 <h1 class="px-4 py-2 font-bold bg-[#FBEEE4] shadow w-fit md:max-w-[70%] my-5">
                     Belajar Integrasi Vue.js 3 dengan Websocket RPC
@@ -81,7 +81,7 @@ function decreaseScrollRecomendation() {
                 <!-- Reccomendation -->
                 <div class="mt-6 flex justify-between items-center">
                     <div>
-                        <span class="font-medium text-lg">Rekomendasi Konten Pilihan</span>
+                        <span class="font-medium text-md">Rekomendasi Konten Pilihan</span>
                     </div>
                     <div class="flex items-center cursor-pointer">
                         <span class="text-sm font-medium mr-1">series</span>

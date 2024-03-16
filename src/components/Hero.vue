@@ -49,7 +49,7 @@ function redirectSignup(){
                         src="../assets/images/typescript.png" />
                 </div>
             </div>
-            <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 py-[4rem]">
+            <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 pt-[3.5rem] pb-[1rem]">
                 <h1
                     class="px-3 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[36px] font-bold bg-[#FBEEE4] shadow">
                     Belajarvue.com
@@ -64,6 +64,11 @@ function redirectSignup(){
                 </div>
                 <div class="bg-black px-3 py-2 max-[380px]:text-[12px] text-white w-fit text-sm shadow">
                     <span>{{ matery[currentMatery] }}</span>
+                </div>
+                <div class="flex w-full justify-between items-center mt-8">
+                    <img class="w-[50px] h-[80px]" style="transform: rotate(-20deg);" src="../assets/images/pinia.png" />
+                    <img width="80px" style="height: 55px;" src="../assets/images/vue.png" />
+                    <img width="70px" style="height: 50px;transform: rotate(15deg)" src="../assets/images/nuxt.png" />
                 </div>
             </div>
         </div>
