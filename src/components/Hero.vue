@@ -4,10 +4,15 @@ import { useRouter } from 'vue-router'
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
+import { useSignupStore } from '@/stores/signup'
+
+const signupStore = useSignupStore()
 const router = useRouter()
 const matery = ref(['Vue.js 2', 'Pinia State Manegement', 'Nuxt.js 2', 'Vuex', 'Quasar', 'Vue.js 3', 'Nuxt.js 3', 'Supabase'])
 const currentMatery = ref(0)
 const windowWidth = ref(null)
+const email = ref('')
+const password = ref('')
 
 onMounted(() => {
     windowWidth.value = window.innerWidth
@@ -19,6 +24,11 @@ setInterval(() => {
     }
     currentMatery.value += 1
 }, 2500)
+
+function redirectSignup(){
+    signupStore.password = password.value
+    router.push(`/signup?email=${email.value}`)
+}
 </script>
 
 <template>
@@ -64,19 +74,22 @@ setInterval(() => {
                 <label class="mt-5 block text-sm font-normal mb-2" for="email">
                     Email
                 </label>
-                <input
+                <input v-model="email"
                     class="py-4 w-full shadow appearance-none rounded px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="email" type="text" :placeholder="$t('enter_your_email')">
                 <label class="mt-5 block text-sm font-normal mb-2" for="password">
                     Password
                 </label>
-                <input
+                <input v-model="password"
                     class="py-4 w-full shadow appearance-none rounded px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="password" type="text" :placeholder="$t('enter_your_password')">
-                <button class="bg-[#4349ff] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">{{ $t('sign_up')
-                    }}</button>
-                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui Ketentuan Layanan & Kebijakan
-                    Privasi BelajarVue.</span>
+                <button @click="redirectSignup" class="bg-[#4349ff] py-2 w-full text-white font-medium rounded-md mt-8 mb-4">Daftar</button>
+                <span class="font-light text-sm">Dengan mendaftar akun, Anda menyetujui <span
+                        class="text-[#4349FF] underline cursor-pointer" @click="$router.push('/privacy-policy')">Terms
+                        of Service
+                    </span> & <span class="text-[#4349FF] underline cursor-pointer"
+                        @click="$router.push('/privacy-policy')">Privacy
+                        Policy</span> BelajarVue.</span>
                 <div class="my-5 text-sm">Atau daftar dengan:</div>
                 <div class="flex">
                     <div

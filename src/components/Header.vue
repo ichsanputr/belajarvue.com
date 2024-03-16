@@ -85,9 +85,12 @@ function decodeToken() {
                         <span class="mx-4">|</span>
                         <!-- <Lang class="mx-2" :is-sticky="stickyActive" /> -->
                         <Search onclick="search_modal.showModal()" class="ml-2 cursor-pointer" />
-                        <div class="dropdown dropdown-bottom dropdown-end">
+                        <div class="dropdown dropdown-bottom dropdown-end mx-3">
                             <div tabindex="0" role="button">
-                                <Theme class="mx-4 cursor-pointer" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" viewBox="0 0 20 20">
+                                    <path fill="currentColor"
+                                        d="M10 3.5a6.5 6.5 0 1 1 0 13zM10 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
+                                </svg>
                             </div>
                             <ul tabindex="0"
                                 class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[9rem]">

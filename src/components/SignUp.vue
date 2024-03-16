@@ -2,12 +2,15 @@
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import Facebook from './Icons/Facebook.vue';
-import { inject, ref, reactive } from 'vue';
-import { useRouter } from 'vue-router';
+import { inject, ref, reactive, onMounted } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { useTokenStore } from '@/stores/token'
+import { useSignupStore } from '@/stores/signup'
 
+const signupStore = useSignupStore()
 const tokenStore = useTokenStore()
 const router = useRouter()
+const route = useRoute()
 
 const axios = inject('axios')
 const form = reactive({
@@ -24,6 +27,16 @@ const otp = ref()
 const otpSection = ref(false)
 const loadingVerification = ref(false)
 const errVerificationCode = ref(false)
+
+onMounted(() => {
+    if (route.query.email){
+        form.email = route.query.email
+    }
+
+    if (signupStore.password){
+        form.password = signupStore.password
+    }
+})
 
 async function register() {
     validateForm()
