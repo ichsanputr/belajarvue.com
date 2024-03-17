@@ -23,4 +23,6 @@ Backend menggunakan golang di repositori private.
 ## Todo
 
 - [ ] Integration OAuth login by google, facebook, & github
-- 
+- [ ] Implement middleware JWT token except auth page & homepage
+- [ ] Implement Light & dark mode
+- [ ] Showing auth name & logout on drawer mobile
