@@ -11,19 +11,18 @@ import Instagram from './Icons/Instagram.vue';
                 <div class="block col-span-2">
                     <img src="../assets/images/logo.png" width="80" />
                     <div class="font-semibold text-[20px] mt-3 mb-4">Belajarvue.com _< </div>
-                            <div class="font-light text-[14px]">Parsinta is a online learning platform intended for web
-                                developers.Through series-series such as Laravel, Reactjs, Vuejs, InertiaJs, HTML,
-                                Bootstrap, Tailwind CSS, and more.</div>
+                        <div class="font-light text-[14px]">Belajarvue merupakan website platform online yang membahas khusus mengenai salah satu framework 
+                            populer Javascript yaitu Vue.js secara detail. Kami menyediakan berbagai artikel dalam bentuk series guna mempermudah dalam proses belajar.
+                        </div>
                             <div class="flex mt-3 md:mt-5">
-                                <FacebookDark />
-                                <Github class="mx-3" />
-                                <Instagram />
+                                <a class="text-black" href="https://www.facebook.com/ichsanputr/" target="_blank"><FacebookDark /></a>
+                                <a class="text-black mx-2" href="https://github.com/ichsanputr" target="_blank"><Github /></a>
+                                <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank"><Instagram /></a>
                             </div>
                     </div>
                     <div class="block mt-6 md:mt-0">
                         <div class="font-semibold text-[16px]">Indeks</div>
                         <ul class="cursor-pointer">
-                            <li>Challenge</li>
                             <li @click="$router.push('/article')">Artikel</li>
                             <li @click="$router.push('/series')">Series</li>
                         </ul>
@@ -62,7 +61,7 @@ import Instagram from './Icons/Instagram.vue';
                     </div>
                     <div class="block mt-6 md:mt-0 col-span-2 pb-6">
                         <div class="font-semibold text-[16px]">{{ $t('newsletter') }}</div>
-                        <div class="font-light text-[14px] my-4 mb-5">{{ $t('newsletter_description') }}</div>
+                        <div class="font-light text-[14px] my-4 mb-5">Dapatkan notifikasi secara update melalui email ketika kami menerbitkan sebuah artikel.</div>
                         <div
                             class="w-full md:w-[75%] flex justify-between items-center bg-white py-2 rounded-3xl px-2 text-[14px] bprder border-black shadow">
                             <input class="pl-3 outline-none" placeholder="Email Address" />
@@ -79,7 +78,7 @@ import Instagram from './Icons/Instagram.vue';
                     </div>
                 </div>
                 <div class="border-t border-slate-300 mt-5" />
-                <div class="block md:flex justify-between py-4 px-4 md:px-0 md:py-8 mx-2 md:mx-0">
+                <div class="block md:flex justify-between py-4 px-4 md:px-0 md:py-6 mx-2 md:mx-0">
                     <div class="text-[14px] mb-1 md:mb-0">© Copyright 2024 Belajarvue. All rights reserved.</div>
                     <div class="text-[14px]">Made with ❤️ by <a href="">Muhammad Ichsan</a></div>
                 </div>

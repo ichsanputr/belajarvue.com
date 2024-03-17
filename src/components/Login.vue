@@ -5,7 +5,7 @@ import { useTokenStore } from '@/stores/token'
 
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
-import Facebook from './Icons/Facebook.vue';
+import Facebook from './Icons/FacebookPlain.vue';
 
 const axios = inject('axios')
 const router = useRouter()
@@ -73,7 +73,7 @@ async function login() {
                 </label>
             </label>
             <div class="mt-4">
-                <span class="underline text-sm text-[#4349ff] cursor-pointer">Lupa password?</span>
+                <span @click="$router.push('/reset-password')" class="underline text-sm text-[#4349ff] cursor-pointer">Lupa password?</span>
             </div>
             <button @click="login"
                 class="bg-[#4349ff] py-2 text-white font-medium rounded-md text-sm mt-4 mb-4 w-[100px]">

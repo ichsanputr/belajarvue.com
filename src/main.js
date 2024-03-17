@@ -9,6 +9,7 @@ import vue3StarRatings from "vue3-star-ratings";
 import VOtpInput from "vue3-otp-input";
 import axios from 'axios'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import { useTokenStore } from '@/stores/token'
 
 import './assets/main.css'
 import "vue-toastification/dist/index.css";
@@ -36,7 +37,7 @@ export const createApp = ViteSSG(
     })
 
     pinia.use(piniaPluginPersistedstate)
-  
+
     app.use(pinia)
     app.use(Toast);
     app.use(head)
@@ -44,8 +45,12 @@ export const createApp = ViteSSG(
     app.component("vue3-star-ratings", vue3StarRatings)
     app.component('v-otp-input', VOtpInput)
 
+    const tokenStore = useTokenStore()
     const axiosInstance = axios.create({
-      baseURL: import.meta.env.VITE_BASE_URL_API
+      baseURL: import.meta.env.VITE_BASE_URL_API,
+      headers: {
+        Authorization: `Bearer ${tokenStore.token}`
+      },
     });
 
     app.provide('axios', axiosInstance);

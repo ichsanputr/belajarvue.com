@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
-import Facebook from './Icons/Facebook.vue';
+import FacebookPlain from './Icons/FacebookPlain.vue';
 import { useSignupStore } from '@/stores/signup'
 
 const signupStore = useSignupStore()
@@ -65,7 +65,7 @@ function redirectSignup(){
                 <div class="bg-black px-3 py-2 max-[380px]:text-[12px] text-white w-fit text-sm shadow">
                     <span>{{ matery[currentMatery] }}</span>
                 </div>
-                <div class="flex w-full justify-between items-center mt-8">
+                <div v-if="windowWidth < 768" class="flex w-full justify-between items-center mt-8">
                     <img class="w-[50px] h-[80px]" style="transform: rotate(-20deg);" src="../assets/images/pinia.png" />
                     <img width="80px" style="height: 55px;" src="../assets/images/vue.png" />
                     <img width="70px" style="height: 50px;transform: rotate(15deg)" src="../assets/images/nuxt.png" />
@@ -107,7 +107,7 @@ function redirectSignup(){
                     </div>
                     <div
                         class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
-                        <Facebook class="w-[16px] md:w-[20px]" />
+                        <FacebookPlain class="w-[16px] md:w-[20px]" />
                     </div>
                 </div>
                 <div class="mt-4 text-light text-sm">Sudah memiliki akun?

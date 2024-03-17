@@ -80,8 +80,7 @@ function decodeToken() {
                     <div class="flex justify-between items-center text-sm">
                         <span @click="$router.push('/')" class="cursor-pointer">{{ $t('home') }}</span>
                         <span @click="$router.push('/series')" class="mx-6 cursor-pointer">Series</span>
-                        <span @click="$router.push('/article')" class="cursor-pointer">{{ $t('article') }}</span>
-                        <span class="ml-6 mr-3 cursor-pointer">Challenge</span>
+                        <span @click="$router.push('/article')" class="cursor-pointer mr-3">{{ $t('article') }}</span>
                         <span class="mx-4">|</span>
                         <!-- <Lang class="mx-2" :is-sticky="stickyActive" /> -->
                         <Search onclick="search_modal.showModal()" class="ml-2 cursor-pointer" />
@@ -177,9 +176,6 @@ function decodeToken() {
                                     </a></li>
                                 <li><a @click="$router.push('/series')">
                                         <Series /> Series
-                                    </a></li>
-                                <li><a>
-                                        <Challenge /> Challenge
                                     </a></li>
                                 <div class="border-t-2 my-3 border-slate-200" />
                                 <li><a>
