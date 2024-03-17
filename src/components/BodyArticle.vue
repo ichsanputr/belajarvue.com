@@ -4,7 +4,6 @@ import Sidebar from './Partials/Sidebar.vue';
 import Exchange from './Icons/Exchange.vue';
 import ArrowLeft from './Icons/ArrowLeft.vue';
 import ArrowRight from './Icons/ArrowRight.vue';
-import CodeHighlighter from './Partials/CodeHighlighter.vue';
 
 const showArrowLeft = ref(false)
 const showArrowRight = ref(false)
@@ -36,7 +35,7 @@ function decreaseScrollRecomendation() {
 <template>
     <!-- Article body -->
     <div class="bg-[#FBEEE4]">
-        <div class="mx-auto w-full md:w-[75%] py-8 pt-[4rem] block md:flex max-w-screen-xl">
+        <div class="mx-auto w-full md:w-[75%] py-8 pt-[1rem] block md:flex max-w-screen-xl">
             <div class="w-[90%] md:w-[65%] md:mx-0 mx-auto">
                 <div class="block">
                     <slot/>

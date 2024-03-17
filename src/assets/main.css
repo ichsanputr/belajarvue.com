@@ -39,3 +39,11 @@ p {
         line-height: 1.4rem;
     }
 }
+
+.thumbnail {
+    border-radius: 16px;
+    height: 80%;
+    width: 100%;
+    margin-bottom: 2.4rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

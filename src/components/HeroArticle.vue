@@ -1,59 +1,29 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { defineProps } from 'vue'
 import SeriesLight from './Icons/SeriesLight.vue';
 import Tag from './Icons/Tag.vue';
 
-const showArrowLeft = ref(false)
-const showArrowRight = ref(false)
-
-onMounted(() => {
-})
-
-function onScrollRecomendation() {
-    const scroll = document.getElementById('reccomendation').scrollLeft
-
-    if (scroll > 20) {
-        showArrowLeft.value = true
-        console.log(scroll)
-        if (scroll > 1167 - 50) {
-            showArrowRight.value = false
-        } else {
-            showArrowRight.value = true
-        }
-    } else {
-        showArrowLeft.value = false
-    }
-}
-
-function increaseScrollRecomendation() {
-    document.getElementById('reccomendation').scrollLeft += 140
-}
-
-function decreaseScrollRecomendation() {
-    document.getElementById('reccomendation').scrollLeft -= 140
-}
+const props = defineProps(['date', 'title', 'description', 'series', 'tag'])
 </script>
 <template>
     <div class="bg-[#FBEEE4] pb-10">
         <div class="bg-dotted flex justify-center items-center relative py-10 border-b border-slate-300">
             <div class="mx-auto w-[90%] md:w-[75%] h-fit my-auto block max-w-screen-xl">
-                <p class="bg-[#FBEEE4] shadow px-4 py-2 w-fit text-xs md:text-sm">Senin, 18 September 2023</p>
+                <p class="bg-[#FBEEE4] shadow px-4 py-2 w-fit text-xs md:text-sm">{{ props.date }}</p>
                 <h1 class="px-4 py-2 font-bold bg-[#FBEEE4] shadow w-fit md:max-w-[70%] my-5">
-                    Belajar Integrasi Vue.js 3 dengan Websocket RPC
+                    {{  props.title }}
                 </h1>
-                <p class="text-black bg-[#FBEEE4] shadow mt-3 px-4 py-3 text-sm md:w-[65%] w-fit">Ingin menghemat waktu
-                    dan usaha dalam pembuatan Admin Panel dengan Laravel? Artikel ini akan membahas tutorial Filament
-                    yang akan memandu Anda mulai dari nol.</p>
-                <div class="flex items-center w-fit mt-6">
+                <p class="text-black bg-[#FBEEE4] shadow mt-3 px-4 py-3 text-sm md:w-[65%] w-fit">{{ props.description }}</p>
+                <div class="flex items-center w-fit mt-6" v-if="props.series">
                     <div class="rounded-xl bg-[black] text-white px-2 py-1 text-xs flex items-center">
                         <SeriesLight class="text-[12px] mr-1" />
-                        <span>Integrasi Vue.js 3 dengan Supabase</span>
+                        <span>{{props.series}}</span>
                     </div>
                 </div>
                 <div class="flex items-center w-fit mt-4">
                     <div class="rounded-xl bg-[black] text-white px-2 py-1 text-xs flex items-center">
                         <Tag class="text-[12px] mr-1" />
-                        <span>Vue.js 3, Supabase, dan Mariadb</span>
+                        <span>Fundamental</span>
                     </div>
                 </div>
             </div>

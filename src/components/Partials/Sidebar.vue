@@ -8,6 +8,16 @@ import InstagramColor from '../Icons/InstagramColor.vue';
 import Telegram from '../Icons/Telegram.vue';
 import Facebook from '../Icons/Facebook.vue';
 import Pinterest from '../Icons/Pinterest.vue';
+
+import { onMounted, ref } from 'vue';
+
+const titlePost = ref('')
+const urlPost = ref('')
+
+onMounted(() => {
+    titlePost.value = document.title.replace(' - Belajarvue', '')
+    urlPost.value = window.location.href
+})
 </script>
 <template>
     <div class="block md:sticky top-24 md:px-12 px-0">
@@ -21,10 +31,10 @@ import Pinterest from '../Icons/Pinterest.vue';
                 </div>
                 <ul tabindex="0"
                     class="dropdown-content z-[1] menu px-4 py-3 mt-3 shadow-md bg-[#FBEEE4] border border-black rounded-xl w-[16rem] sm:w-[17rem] md:w-[18rem]">
-                    <p class="text-sm font-semibold mb-2">Menangani Relasi Polymorphic Dalam Filament Form</p>
+                    <p class="text-sm font-semibold mb-2">{{ titlePost }}</p>
                     <p class="text-sm">Bagikan artikel ini ke sosial mediamu.</p>
                     <div class="flex justify-between items-center">
-                        <a target="_blank" href="https://web.whatsapp.com/send?text=Menangani%20Relasi%20Polymorphic%20Dalam%20Filament%20Form%20https%3A%2F%2Fparsinta.com%2FsKBwR550a"><Whatsapp class="cursor-pointer text-[20px]" /></a>
+                        <a target="_blank" :href="'https://web.whatsapp.com/send?text=' + urlPost"><Whatsapp class="cursor-pointer text-[20px]" /></a>
                         <Twitter class="cursor-pointer text-[21px]" />
                         <Facebook class="cursor-pointer text-[20px]" />
                         <Pinterest class="cursor-pointer text-[20px]" />
@@ -71,7 +81,7 @@ import Pinterest from '../Icons/Pinterest.vue';
                     </div>
                 </div>
             </div>
-            <div class="mt-5">
+            <div class="mt-5 cursor-pointer">
                 <span class="text-sm underline">Lihat series</span>
             </div>
         </div>

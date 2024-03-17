@@ -12,7 +12,7 @@
                     <img width="100%" class="rounded-lg shadow-md"
                         src="https://ik.imagekit.io/uvma3bkbp/toast_pt4G2T-HE.jpg?updatedAt=1710655822748" />
                     <div class="my-3 font-semibold text-[18px] mt-6">Apa itu Toast di Website?</div>
-                    <div class="my-3 font-normal text-[14px] md:text-[16px]"></div>
+                    <div class="my-3 font-normal text-[14px] md:text-[16px]">Toast merupakan komponen bebentuk modal yang biasanya berukuran kecil yang berisi informasi singkat tanpa diikuti aksi seperti form, atau menampilkan...</div>
                 </div>
             </div>
             <div @click="$router.push('/article')" class="cursor-pointer float-right mx-8 md:mx-0 text-[#4349ff] md:text-[16px] text-[14px] font-medium flex items-center mt-0 md:mt-3 hover:bg-[white] hover:shadow px-2 py-2 rounded-lg">
