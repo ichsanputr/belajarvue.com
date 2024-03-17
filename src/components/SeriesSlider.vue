@@ -20,16 +20,19 @@ onMounted(async () => {
             <p class="text-white text-[14px]">Belajar materi secara bertahap dengan kumpulan artikel yang berkelanjutan dalam bentuk series.</p>
         </div>
         <div class="flex w-full justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
-            <div v-for="(i,index) in 15" :class="{'ml-10' : index == 0}"
-                class="shadow bg-white relative w-[300px] mr-10 rounded-lg flex flex-none h-[200px] flex-col py-6 space-y-1">
-                <div class="block px-4 mt-6">
-                    <div class="font-semibold text-[16px]">Vue.js + Supabase</div>
-                    <div class="text-[14px]">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </div>
+            <div v-for="(i,index) in 1" :class="{'ml-10' : index == 0}"
+                class="shadow bg-white relative w-[330px] mr-10 rounded-lg flex flex-none h-[420px] flex-col py-0 space-y-1">
+                <div class="bg-[#EAFDC6] w-full rounded-t-lg text-center font-medium py-1">
+                    1 artikel
                 </div>
-                <div class="absolute top-[-5px] bg-[#EAFDC6] w-full rounded-t-lg text-center font-medium py-1">
-                    12 artikel
+                <div class="mb-8">
+                    <img src="https://ik.imagekit.io/uvma3bkbp/Blue%20and%20Yellow%20Playful%20Doodle%20Digital%20Brainstorm%20Presentation_iWrSwqpUm.jpg?updatedAt=1710649477016">
+                </div>
+                <div class="block px-4 mt-8">
+                    <div class="font-semibold text-[16px] mt-6">Belajar Komponenen Dasar Frontend</div>
+                    <div class="text-[14px] mt-2">
+                        Belajar mengenai arti dan fungsi dari komponen dasar frontend seperti tooltip, modal, slider, carousel dan lainya.
+                    </div>
                 </div>
                 <div class="absolute text-[14px] bottom-0 w-full rounded-b-lg px-4 pb-2 border-t-2 border-dotted font-medium py-1">
                     Vue.js 3, Supabase, Firebase, Pinia

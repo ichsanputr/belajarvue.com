@@ -109,13 +109,14 @@ function decodeToken() {
                         </div>
                         <div class="dropdown dropdown-bottom dropdown-end">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
+                                {{ tokenStore.token }}asas
                                 <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
                                     class="cursor-pointer ml-1" />
                                 <Profile v-else class="cursor-pointer" />
                             </div>
                             <Transition>
                                 <div v-if="hideDropdown" tabindex="0"
-                                    class="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-[12rem]">
+                                    class="dropdown-content z-[1] menu shadow bg-base-100 rounded-xl w-[12rem]">
                                     <div class="flex items-center my-3 px-3">
                                         <span v-if="name" class="font-medium">Halo {{ name }}
                                             👋</span>
