@@ -109,7 +109,6 @@ function decodeToken() {
                         </div>
                         <div class="dropdown dropdown-bottom dropdown-end">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
-                                {{ tokenStore.token }}asas
                                 <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
                                     class="cursor-pointer ml-1" />
                                 <Profile v-else class="cursor-pointer" />

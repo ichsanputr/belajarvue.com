@@ -19,17 +19,17 @@ onMounted(async () => {
             <h2 class="text-white font-medium text-[20px] mb-1">Ingin belajar apa hari ini?</h2>
             <p class="text-white text-[14px]">Belajar materi secara bertahap dengan kumpulan artikel yang berkelanjutan dalam bentuk series.</p>
         </div>
-        <div class="flex w-full justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
-            <div v-for="(i,index) in 1" :class="{'ml-10' : index == 0}"
-                class="shadow bg-white relative w-[330px] mr-10 rounded-lg flex flex-none h-[420px] flex-col py-0 space-y-1">
-                <div class="bg-[#EAFDC6] w-full rounded-t-lg text-center font-medium py-1">
+        <div class="w-[85%] mx-auto flex justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
+            <div v-for="(i,index) in 1"
+                class="shadow bg-white relative w-[300px] mr-10 rounded-lg flex flex-none h-[420px] flex-col py-0 space-y-0">
+                <div class="bg-[#EAFDC6] text-sm w-full rounded-t-lg text-center font-medium py-1">
                     1 artikel
                 </div>
                 <div class="mb-8">
                     <img src="https://ik.imagekit.io/uvma3bkbp/Blue%20and%20Yellow%20Playful%20Doodle%20Digital%20Brainstorm%20Presentation_iWrSwqpUm.jpg?updatedAt=1710649477016">
                 </div>
                 <div class="block px-4 mt-8">
-                    <div class="font-semibold text-[16px] mt-6">Belajar Komponenen Dasar Frontend</div>
+                    <div class="font-semibold text-[16px] mt-6">Belajar Komponen Dasar Frontend</div>
                     <div class="text-[14px] mt-2">
                         Belajar mengenai arti dan fungsi dari komponen dasar frontend seperti tooltip, modal, slider, carousel dan lainya.
                     </div>

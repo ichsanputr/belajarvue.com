@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
     <div class="bg-[#FBEEE4] py-8 pb-20">
         <div class="mx-auto w-full md:w-[85%] pb-8">
@@ -6,13 +8,11 @@
                 <p class="text-[14px] mt-2">Artikel terbaru yang kami terbitkan.</p>
             </div>
             <div class="w-full px-8 md:px-0 mx-auto block md:grid grid-cols-3 gap-16">
-                <div v-for="i in 6" class="w-full cursor-pointer my-10 md:my-0">
-                    <img width="100%" class="rounded-lg shadow"
-                        src="https://ik.imagekit.io/vpaoovtzwz/tr:h-360,w-640/images/series/01HPSP40F09A2TBD92SNP0X8P3.jpg?tr=n-thumbnail" />
-                    <div class="my-3 font-semibold text-[18px] mt-6">Membuat Aplikasi Donasi dengan Vue 3, Firebase, Tailwind CSS</div>
-                    <div class="my-3 font-normal text-[14px] md:text-[16px]">Pelajari cara kerja Blueprint untuk
-                        mempercepat
-                        pembuatan model, controller, dan komponen aplikasi....</div>
+                <div v-for="i in 1" class="w-full cursor-pointer my-10 md:my-0" @click="$router.push('/article/toast-website')">
+                    <img width="100%" class="rounded-lg shadow-md"
+                        src="https://ik.imagekit.io/uvma3bkbp/toast_pt4G2T-HE.jpg?updatedAt=1710655822748" />
+                    <div class="my-3 font-semibold text-[18px] mt-6">Apa itu Toast di Website?</div>
+                    <div class="my-3 font-normal text-[14px] md:text-[16px]"></div>
                 </div>
             </div>
             <div @click="$router.push('/article')" class="cursor-pointer float-right mx-8 md:mx-0 text-[#4349ff] md:text-[16px] text-[14px] font-medium flex items-center mt-0 md:mt-3 hover:bg-[white] hover:shadow px-2 py-2 rounded-lg">
