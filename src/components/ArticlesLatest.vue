@@ -8,7 +8,7 @@
                 <p class="text-[14px] mt-2">Artikel terbaru yang kami terbitkan.</p>
             </div>
             <div class="w-full px-8 md:px-0 mx-auto block md:grid grid-cols-3 gap-16">
-                <div v-for="i in 1" class="w-full cursor-pointer my-10 md:my-0" @click="$router.push('/article/toast-website')">
+                <div v-for="i in 6" class="w-full cursor-pointer my-10 md:my-0" @click="$router.push('/article/toast-website')">
                     <img width="100%" class="rounded-lg shadow-md"
                         src="https://ik.imagekit.io/uvma3bkbp/toast_pt4G2T-HE.jpg?updatedAt=1710655822748" />
                     <div class="my-3 font-semibold text-[18px] mt-6">Apa itu Toast di Website?</div>
