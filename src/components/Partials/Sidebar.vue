@@ -1,14 +1,13 @@
 <script setup>
-import Share from '@/Icons/Share.vue';
-import Bookmark from '@/Icons/Bookmark.vue';
-import Checked from '@/Icons/Checked.vue';
-import Whatsapp from '@/Icons/Whatsapp.vue';
-import Twitter from '@/Icons/Twitter.vue';
-import InstagramColor from '@/Icons/InstagramColor.vue';
-import Telegram from '@/Icons/Telegram.vue';
-import Facebook from '@/Icons/Facebook.vue';
-import Pinterest from '@/Icons/Pinterest.vue';
-
+import Share from '@/components/Icons/Share.vue';
+import Bookmark from '@/components/Icons/Bookmark.vue';
+import Checked from '@/components/Icons/Checked.vue';
+import Whatsapp from '@/components/Icons/Whatsapp.vue';
+import Twitter from '@/components/Icons/Twitter.vue';
+import InstagramColor from '@/components/Icons/InstagramColor.vue';
+import Telegram from '@/components/Icons/Telegram.vue';
+import Facebook from '@/components/Icons/Facebook.vue';
+import Pinterest from '@/components/Icons/Pinterest.vue';
 
 const titlePost = ref('')
 const urlPost = ref('')

@@ -6,6 +6,7 @@ import ArrowRight from './Icons/ArrowRight.vue';
 
 const showArrowLeft = ref(false)
 const showArrowRight = ref(false)
+const themeStore = useThemeStore()
 
 function onScrollRecomendation() {
     const scroll = document.getElementById('reccomendation').scrollLeft
@@ -30,10 +31,18 @@ function increaseScrollRecomendation() {
 function decreaseScrollRecomendation() {
     document.getElementById('reccomendation').scrollLeft -= 140
 }
+
+const bg = computed(() => {
+    if (themeStore.theme == 'default'){
+        return 'bg-[#FBEEE4]'
+    } else if (themeStore.theme == 'light'){
+        return 'bg-white'
+    }
+}) 
 </script>
 <template>
     <!-- Article body -->
-    <div class="bg-[#FBEEE4]">
+    <div :class="bg">
         <div class="mx-auto w-full md:w-[75%] py-8 pt-[1rem] block md:flex max-w-screen-xl">
             <div class="w-[90%] md:w-[65%] md:mx-0 mx-auto">
                 <div class="block">

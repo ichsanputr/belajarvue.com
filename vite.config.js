@@ -16,7 +16,12 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue-router'
+        'vue-router',
+        {
+          '@/stores/theme': [
+            'useThemeStore',
+          ],
+        },
       ]
     })
   ],

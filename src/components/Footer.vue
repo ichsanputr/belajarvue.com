@@ -2,22 +2,40 @@
 import FacebookDark from './Icons/FacebookDark.vue';
 import Github from './Icons/Github.vue';
 import Instagram from './Icons/Instagram.vue';
+
+const themeStore = useThemeStore()
+
+const bg = computed(() => {
+    if (themeStore.theme == 'default') {
+        return 'bg-[#FBEEE4]'
+    } else if (themeStore.theme == 'light') {
+        return 'bg-white'
+    }
+}) 
 </script>
 
 <template>
-    <div class="bg-[#FBEEE4] pt-8 border-t border-slate-300">
+    <div :class="bg" class="pt-8 border-t border-slate-300">
         <div class="mx-auto w-full md:w-[90%]">
             <div class="px-4 md:px-0 block md:grid grid-cols-6 gap-6 mb-4 md:mb-10">
                 <div class="block col-span-2">
                     <img src="../assets/images/logo.png" width="80" />
                     <div class="font-semibold text-[20px] mt-3 mb-4">Belajarvue.com _< </div>
-                        <div class="font-light text-[14px]">Belajarvue merupakan website platform online yang membahas khusus mengenai salah satu framework 
-                            populer Javascript yaitu Vue.js secara detail. Kami menyediakan berbagai artikel dalam bentuk series guna mempermudah dalam proses belajar.
-                        </div>
+                            <div class="font-light text-[14px]">Belajarvue merupakan website platform online yang
+                                membahas khusus mengenai salah satu framework
+                                populer Javascript yaitu Vue.js secara detail. Kami menyediakan berbagai artikel dalam
+                                bentuk series guna mempermudah dalam proses belajar.
+                            </div>
                             <div class="flex mt-3 md:mt-5">
-                                <a class="text-black" href="https://www.facebook.com/ichsanputr/" target="_blank"><FacebookDark /></a>
-                                <a class="text-black mx-2" href="https://github.com/ichsanputr" target="_blank"><Github /></a>
-                                <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank"><Instagram /></a>
+                                <a class="text-black" href="https://www.facebook.com/ichsanputr/" target="_blank">
+                                    <FacebookDark />
+                                </a>
+                                <a class="text-black mx-2" href="https://github.com/ichsanputr" target="_blank">
+                                    <Github />
+                                </a>
+                                <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank">
+                                    <Instagram />
+                                </a>
                             </div>
                     </div>
                     <div class="block mt-6 md:mt-0">
@@ -61,7 +79,8 @@ import Instagram from './Icons/Instagram.vue';
                     </div>
                     <div class="block mt-6 md:mt-0 col-span-2 pb-6">
                         <div class="font-semibold text-[16px]">{{ $t('newsletter') }}</div>
-                        <div class="font-light text-[14px] my-4 mb-5">Dapatkan notifikasi secara update melalui email ketika kami menerbitkan sebuah artikel.</div>
+                        <div class="font-light text-[14px] my-4 mb-5">Dapatkan notifikasi secara update melalui email
+                            ketika kami menerbitkan sebuah artikel.</div>
                         <div
                             class="w-full md:w-[75%] flex justify-between items-center bg-white py-2 rounded-3xl px-2 text-[14px] bprder border-black shadow">
                             <input class="pl-3 outline-none" placeholder="Email Address" />

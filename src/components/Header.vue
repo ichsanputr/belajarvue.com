@@ -1,6 +1,4 @@
 <script setup>
-import { useJwt } from '@vueuse/integrations/useJwt'
-
 import Search from './Icons/Search.vue';
 import Night from './Icons/Night.vue';
 import Light from './Icons/Light.vue';
@@ -12,9 +10,13 @@ import Login from './Icons/Login.vue';
 import Website from './Icons/Website.vue';
 import Profile from './Icons/Profile.vue';
 import ProfileName from './Partials/ProfileName.vue';
+import CheckedTheme from './Icons/CheckedTheme.vue'
+
 import { useTokenStore } from '@/stores/token'
+import { useJwt } from '@vueuse/integrations/useJwt'
 
 const tokenStore = useTokenStore()
+const themeStore = useThemeStore()
 const stickyActive = ref(false)
 const windowWidth = ref(null)
 const headerReady = ref(false)
@@ -39,11 +41,20 @@ onMounted(async () => {
 })
 
 const headerClass = computed(() => {
+    let headerClass = ''
+    
+    if (themeStore.theme == 'light'){
+        headerClass += ' bg-white'
+    }
     if (stickyActive.value) {
-        return 'bg-white border-b border-black'
+        headerClass += ' border-b border-black'
     }
 
-    return 'bg-[#fbeee4]'
+    if (themeStore.theme == 'default'){
+        headerClass += ' bg-[#fbeee4]'
+    }
+
+    return headerClass
 })
 
 function logout() {
@@ -87,22 +98,49 @@ function decodeToken() {
                                 </svg>
                             </div>
                             <ul tabindex="0"
-                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[10rem]">
-                                <li><a class="flex">
-                                        <Night class="w-[16px]" />
-                                        <span>Dark</span>
-                                    </a></li>
-                                <li><a class="flex">
-                                        <Light class="w-[16px]" />
-                                        <span>Light</span>
-                                    </a></li>
-                                <li><a class="flex">
-                                        <Website class="w-[16px]" />
-                                        <span>Default</span>
-                                    </a></li>
+                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[9rem]">
+                                <li>
+                                    <a @click="themeStore.theme = 'dark'"
+                                        :class="{ 'bg-slate-200': themeStore.theme == 'dark' }"
+                                        class="flex justify-between">
+                                        <div class="flex">
+                                            <Night class="w-[16px] mr-2" />
+                                            <span>Dark</span>
+                                        </div>
+                                        <div v-if="themeStore.theme == 'dark'">
+                                            <CheckedTheme />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a @click="themeStore.theme = 'light'"
+                                        :class="{ 'bg-slate-200': themeStore.theme == 'light' }"
+                                        class="flex justify-between">
+                                        <div class="flex">
+                                            <Light class="w-[16px] mr-2" />
+                                            <span>Light</span>
+                                        </div>
+                                        <div v-if="themeStore.theme == 'light'">
+                                            <CheckedTheme />
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a @click="themeStore.theme = 'default'"
+                                        :class="{ 'bg-slate-200': themeStore.theme == 'default' }"
+                                        class="flex justify-between">
+                                        <div class="flex">
+                                            <Website class="w-[16px] mr-2" />
+                                            <span>Default</span>
+                                        </div>
+                                        <div v-if="themeStore.theme == 'default'">
+                                            <CheckedTheme />
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="dropdown dropdown-bottom dropdown-end">
+                        <div class="dropdown dropdown-bottom dropdown-end" @click="console.log(themeStore.theme)">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
                                 <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
                                     class="cursor-pointer" />
@@ -111,7 +149,7 @@ function decodeToken() {
                             <Transition>
                                 <div v-if="hideDropdown" tabindex="0"
                                     class="dropdown-content z-[1] menu shadow bg-base-100 rounded-xl w-[12rem]">
-                                    <div class="flex items-center my-3 px-3">
+                                    <div class="flex items-center mb-3 mt-2 px-3">
                                         <span v-if="name" class="font-medium">Halo {{ name }}
                                             👋</span>
                                         <span v-else class="font-medium">Siapa kamu?</span>

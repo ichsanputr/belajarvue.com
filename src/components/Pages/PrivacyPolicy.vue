@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-[#FBEEE4] py-10">
+    <div class="px-4 md:px-0 w-full bg-[#FBEEE4] py-10">
         <div class="md:w-[70%] mx-auto">
             <h1 class="font-semibold mb-4">Privacy Policy</h1>
             <p>Kebijakan privasi ini mengungkapkan praktik privasi untuk parsinta.com. Kebijakan privasi ini hanya

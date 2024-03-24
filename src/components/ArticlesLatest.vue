@@ -1,7 +1,18 @@
 <script setup>
+const themeStore = useThemeStore()
+
+const bg = computed(() => {    
+    if (themeStore.theme == 'light'){
+        return 'bg-white'
+    }
+
+    if (themeStore.theme == 'default'){
+        return 'bg-[#fbeee4]'
+    }
+})
 </script>
 <template>
-    <div class="bg-[#FBEEE4] py-8 pb-20">
+    <div :class="bg" class="py-8 pb-20">
         <div class="mx-auto w-full md:w-[85%] pb-8">
             <div class="mt-4 mb-8 md:mx-0 mx-8">
                 <h2 class="font-semibold text-[20px] mb-1">Artikel Terbaru</h2>

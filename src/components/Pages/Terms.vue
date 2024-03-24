@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-[#FBEEE4] py-10">
+    <div class="px-4 md:px-0 w-full bg-[#FBEEE4] py-10">
         <div class="md:w-[70%] mx-auto">
             <h1 class="font-semibold mb-4">Syarat dan Ketentuan</h1>
             <p>Dengan mengakses situs web ini, Anda setuju untuk terikat dengan Syarat dan Ketentuan Penggunaan situs
