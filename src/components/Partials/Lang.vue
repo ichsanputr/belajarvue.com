@@ -1,6 +1,5 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { defineProps } from 'vue';
 const { locale } = useI18n({ useScope: 'global' })
 
 const props = defineProps(['isSticky'])

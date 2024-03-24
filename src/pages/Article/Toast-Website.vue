@@ -1,11 +1,9 @@
 <script setup>
-import Header from '../../components/Header.vue'
-import HeroArticle from '../../components/HeroArticle.vue'
-import Footer from '../../components/Footer.vue'
+import Header from '@/components/Header.vue'
+import HeroArticle from '@/components/HeroArticle.vue'
+import Footer from '@/components/Footer.vue'
 import BodyArticle from '@/components/BodyArticle.vue';
 import { useSeoMeta } from '@unhead/vue';
-
-import { onMounted } from 'vue'
 
 onMounted(() => {
   window.scrollTo(0, 0)

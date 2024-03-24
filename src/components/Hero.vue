@@ -1,6 +1,4 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import FacebookPlain from './Icons/FacebookPlain.vue';

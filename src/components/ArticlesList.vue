@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 import Pagination from './Partials/Pagination.vue'
 
 const category = ref(['Vue.js 3', 'Pinia', 'Quasar', 'Supabase', 'Firebase'])

@@ -1,9 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import LayoutDefault from '../layouts/Default.vue'
-import PrivacyPolicy from '../components/Pages/PrivacyPolicy.vue'
-
-import { onMounted } from 'vue'
+import LayoutDefault from '@/layouts/Default.vue'
+import PrivacyPolicy from '@/components/Pages/PrivacyPolicy.vue'
 
 onMounted(() => {
   window.scrollTo(0,0)

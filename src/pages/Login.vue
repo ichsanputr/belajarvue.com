@@ -1,8 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import LayoutDefault from '../layouts/Default.vue'
-import Login from '../components/Login.vue'
-import { onMounted, defineEmits, ref } from 'vue'
+import LayoutDefault from '@/layouts/Default.vue'
+import Login from '@/components/Login.vue'
 
 onMounted(() => {
   window.scrollTo(0,0)

@@ -1,17 +1,13 @@
 <script setup>
-import { useRouter } from 'vue-router';
-import { onMounted, computed, ref } from 'vue';
 import { useJwt } from '@vueuse/integrations/useJwt'
 
 import Search from './Icons/Search.vue';
 import Night from './Icons/Night.vue';
 import Light from './Icons/Light.vue';
-import Theme from './Icons/Theme.vue';
 import Hamburger from './Icons/Hamburger.vue';
 import Article from './Icons/Article.vue';
 import Series from './Icons/Series.vue';
 import Home from './Icons/Home.vue';
-import Challenge from './Icons/Challenge.vue';
 import Login from './Icons/Login.vue';
 import Website from './Icons/Website.vue';
 import Profile from './Icons/Profile.vue';
@@ -24,7 +20,6 @@ const windowWidth = ref(null)
 const headerReady = ref(false)
 const hideDropdown = ref(false)
 const name = ref('')
-const router = useRouter()
 
 onMounted(async () => {
     windowWidth.value = window.innerWidth
@@ -92,7 +87,7 @@ function decodeToken() {
                                 </svg>
                             </div>
                             <ul tabindex="0"
-                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[9rem]">
+                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-[10rem]">
                                 <li><a class="flex">
                                         <Night class="w-[16px]" />
                                         <span>Dark</span>
@@ -110,7 +105,7 @@ function decodeToken() {
                         <div class="dropdown dropdown-bottom dropdown-end">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
                                 <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
-                                    class="cursor-pointer ml-1" />
+                                    class="cursor-pointer" />
                                 <Profile v-else class="cursor-pointer" />
                             </div>
                             <Transition>

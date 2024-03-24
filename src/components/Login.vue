@@ -1,6 +1,4 @@
 <script setup>
-import { reactive, ref, inject } from 'vue'
-import { useRouter } from 'vue-router';
 import { useTokenStore } from '@/stores/token'
 
 import Google from './Icons/Google.vue';

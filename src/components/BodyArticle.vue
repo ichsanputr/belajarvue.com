@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import Sidebar from './Partials/Sidebar.vue';
 import Exchange from './Icons/Exchange.vue';
 import ArrowLeft from './Icons/ArrowLeft.vue';
@@ -55,11 +54,11 @@ function decreaseScrollRecomendation() {
                         class="w-full flex justify-between items-center scroll-smooth overflow-x-auto md:mt-10"
                         style="scrollbar-width: none">
 
-                        <div v-for="(i, index) in 6" class="w-[220px] cursor-pointer flex-none my-10 md:my-0"
+                        <div v-for="(i, index) in 6" class="w-[180px] md:w-[220px] cursor-pointer flex-none my-10 md:my-0"
                             :class="{ 'mr-12': index != 5 }">
                             <img width="100%" class="rounded-lg shadow"
                                 src="https://ik.imagekit.io/vpaoovtzwz/tr:h-360,w-640/images/series/01HPSP40F09A2TBD92SNP0X8P3.jpg?tr=n-thumbnail" />
-                            <div class="my-3 font-semibold text-[16px] mt-6">Membuat Aplikasi Donasi dengan Vue 3,
+                            <div class="my-3 font-semibold text-[14px] md:text-[16px] mt-6">Membuat Aplikasi Donasi dengan Vue 3,
                                 Firebase,
                                 Tailwind CSS</div>
                             <div class="my-3 font-normal text-[12px] md:text-[14px]">Pelajari cara kerja Blueprint untuk
@@ -70,13 +69,13 @@ function decreaseScrollRecomendation() {
                     <Transition>
                         <div @click="decreaseScrollRecomendation" v-if="showArrowLeft"
                             class="z-50 cursor-pointer absolute shadow-lg rounded-full left-2 px-1 py-1 top-[50%] bg-[black]">
-                            <ArrowLeft class="text-[16px] text-white" />
+                            <ArrowLeft class="w-[18px] text-white" />
                         </div>
                     </Transition>
                     <Transition>
                         <div @click="increaseScrollRecomendation" v-if="showArrowRight"
-                            class="absolute z-50 right-2 shadow-lg top-[50%] bg-[black] px-1 py-1 rounded-full">
-                            <ArrowRight class="text-[16px] text-white" />
+                            class="absolute z-50 right-2 shadow-xl top-[50%] bg-[black] px-1 py-1 rounded-full">
+                            <ArrowRight class="w-[18px] text-white" />
                         </div>
                     </Transition>
                 </div>

@@ -1,7 +1,4 @@
 <script setup>
-import { ref, inject, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-
 const axios = inject('axios')
 const route = useRoute()
 

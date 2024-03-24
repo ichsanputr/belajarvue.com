@@ -1,8 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import LayoutDefault from '../layouts/Default.vue'
-import ForgotPassword from '../components/ForgotPassword.vue'
-import { onMounted } from 'vue'
+import LayoutDefault from '@/layouts/Default.vue'
+import ForgotPassword from '@/components/ForgotPassword.vue'
 
 onMounted(() => {
   window.scrollTo(0,0)

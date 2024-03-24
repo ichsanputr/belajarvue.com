@@ -1,7 +1,6 @@
 <script setup>
-import Header from '../../components/Header.vue'
-import Footer from '../../components/Footer.vue'
-import { ref } from 'vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 const rating = ref(0)
 </script>

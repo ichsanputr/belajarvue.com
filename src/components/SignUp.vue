@@ -2,8 +2,6 @@
 import Google from './Icons/Google.vue';
 import Github from './Icons/Github.vue';
 import FacebookPlain from './Icons/FacebookPlain.vue';
-import { inject, ref, reactive, onMounted } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
 import { useTokenStore } from '@/stores/token'
 import { useSignupStore } from '@/stores/signup'
 

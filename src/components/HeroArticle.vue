@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import SeriesLight from './Icons/SeriesLight.vue';
 import Tag from './Icons/Tag.vue';
 

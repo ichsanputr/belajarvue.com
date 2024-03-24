@@ -1,9 +1,7 @@
 <script setup>
-import Header from '../../components/Header.vue'
-import ArticlesList from '../../components/ArticlesList.vue'
-import Footer from '../../components/Footer.vue'
-
-import { onMounted } from 'vue'
+import Header from '@/components/Header.vue'
+import ArticlesList from '@/components/ArticlesList.vue'
+import Footer from '@/components/Footer.vue'
 
 onMounted(() => {
   window.scrollTo(0,0)

@@ -1,11 +1,9 @@
 <script setup>
 import { useHead } from '@unhead/vue'
-import Hero from '../components/Hero.vue'
-import SeriesSlider from '../components/SeriesSlider.vue'
-import ArticlesLatest from '../components/ArticlesLatest.vue'
-import LayoutDefault from '../layouts/Default.vue'
-
-import { onMounted } from 'vue'
+import Hero from '@/components/Hero.vue'
+import SeriesSlider from '@/components/SeriesSlider.vue'
+import ArticlesLatest from '@/components/ArticlesLatest.vue'
+import LayoutDefault from '@/layouts/Default.vue'
 
 onMounted(() => {
   window.scrollTo(0, 0)

@@ -2,8 +2,8 @@
 import { onMounted, defineProps, ref } from "vue";
 import Highlight from 'highlight.js'
 
-import Copy from '../Icons/Copy.vue'
-import CopyChecked from "../Icons/CopyChecked.vue";
+import Copy from '@/Icons/Copy.vue'
+import CopyChecked from "@/Icons/CopyChecked.vue";
 
 const lang = ref('')
 const code = ref('')

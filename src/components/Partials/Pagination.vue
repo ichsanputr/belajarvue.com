@@ -1,9 +1,8 @@
 <script setup>
-import { defineProps, ref } from 'vue'
-import ArrowLeftDouble from '../Icons/ArrowLeftDouble.vue';
-import ArrowRightDouble from '../Icons/ArrowRightDouble.vue';
-import ArrowLeft from '../Icons/ArrowLeft.vue';
-import ArrowRight from '../Icons/ArrowRight.vue';
+import ArrowLeftDouble from '@/Icons/ArrowLeftDouble.vue';
+import ArrowRightDouble from '@/Icons/ArrowRightDouble.vue';
+import ArrowLeft from '@/Icons/ArrowLeft.vue';
+import ArrowRight from '@/Icons/ArrowRight.vue';
 
 const props = defineProps(['totalPage'])
 const currentPage = ref(1)
