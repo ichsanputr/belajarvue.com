@@ -43,6 +43,8 @@ jobs:
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Change title index
+        run: sed -i -e 's/>Belajarvue</>Belajarvue - Platform Belajar Vue Js Bahasa Indonesia</g' ./dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

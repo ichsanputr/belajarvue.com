@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@unhead/vue": "^1.8.12",
+    "@vueuse/head": "^2.0.0",
     "@vueuse/integrations": "^10.9.0",
     "axios": "^1.6.7",
     "daisyui": "^4.7.2",

@@ -1,5 +1,5 @@
 <script setup>
-import { useHead } from '@unhead/vue'
+import { useHead } from '@vueuse/head'
 import LayoutDefault from '@/layouts/Default.vue'
 import Login from '@/components/Login.vue'
 
@@ -8,7 +8,7 @@ onMounted(() => {
 })
 
 useHead({
-    title: "Login - Belajarvue" 
+  title: "Kakakak"
 })
 </script>
 

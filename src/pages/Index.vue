@@ -9,8 +9,8 @@ onMounted(() => {
   window.scrollTo(0, 0)
 })
 
-useHead({
-    title: "Belajarvue - Platform Belajar Vue Js Bahasa Indonesia" 
+onMounted(() => {
+  document.title = "Makasasa";
 })
 </script>
 
