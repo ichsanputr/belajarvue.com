@@ -1,5 +1,4 @@
 <script setup>
-import { useHead } from '@unhead/vue'
 import Hero from '@/components/Hero.vue'
 import SeriesSlider from '@/components/SeriesSlider.vue'
 import ArticlesLatest from '@/components/ArticlesLatest.vue'

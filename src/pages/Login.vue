@@ -1,14 +1,15 @@
 <script setup>
-import { useHead } from '@vueuse/head'
 import LayoutDefault from '@/layouts/Default.vue'
 import Login from '@/components/Login.vue'
+import { useSeoMeta } from '@unhead/vue';
 
 onMounted(() => {
   window.scrollTo(0,0)
 })
 
-useHead({
-  title: "Kakakak"
+useSeoMeta({
+  title: "Kakakak",
+  description: "Lahhhh"
 })
 </script>
 
