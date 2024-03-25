@@ -8,10 +8,6 @@ import LayoutDefault from '@/layouts/Default.vue'
 onMounted(() => {
   window.scrollTo(0, 0)
 })
-
-onMounted(() => {
-  document.title = "Makasasa";
-})
 </script>
 
 <template>
