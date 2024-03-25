@@ -37,6 +37,18 @@ const bgHero = computed(() => {
     if (themeStore.theme == 'default'){
         return 'bg-[#fbeee4] bg-dotted-default'
     }
+
+    if (themeStore.theme == 'dark') {
+        return 'bg-dotted-dark'
+    }
+})
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark'){
+        return "text-white"
+    }
+
+    return 'text-black'
 })
 
 const bg = computed(() => {    
@@ -46,6 +58,10 @@ const bg = computed(() => {
 
     if (themeStore.theme == 'default'){
         return 'bg-[#fbeee4]'
+    }
+
+    if (themeStore.theme == 'dark'){
+        return 'bg-[#080808]'
     }
 })
 
@@ -78,7 +94,7 @@ const bgText = computed(() => {
                         src="../assets/images/typescript.png" />
                 </div>
             </div>
-            <div class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 pt-[3.5rem] pb-[1rem]">
+            <div :class="textTheme" class="mx-auto w-[90%] md:w-[70%] h-fit my-auto block md:py-0 pt-[3.5rem] pb-[1rem]">
                 <h1 :class="bgText"
                     class="px-3 py-2 w-fit text-[28px] max-[380px]:text-[26px] md:text-[36px] font-bold shadow">
                     Belajarvue.com
@@ -102,8 +118,8 @@ const bgText = computed(() => {
             </div>
         </div>
         <!-- Sign up Form -->
-        <div class="flex justify-center items-center">
-            <div class="block w-[90%] md:w-[60%] py-8 md:py-12">
+        <div :class="bg" class="flex justify-center items-center">
+            <div :class="textTheme" class="block w-[90%] md:w-[60%] py-8 md:py-12">
                 <span class="font-semibold text-[18px] md:text-[22px]">Daftar akun untuk menikmati semua fitur di website ini</span><br>
                 <label class="mt-5 block text-sm font-normal mb-2" for="email">
                     Email
@@ -131,7 +147,7 @@ const bgText = computed(() => {
                         <Google class="w-[16px] md:w-[20px]" />
                     </div>
                     <div
-                        class="bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
+                        class="text-black bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Github class="w-[16px] md:w-[20px]" />
                     </div>
                     <div

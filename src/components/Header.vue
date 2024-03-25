@@ -44,10 +44,19 @@ const headerClass = computed(() => {
     let headerClass = ''
     
     if (themeStore.theme == 'light'){
-        headerClass += ' bg-white'
+        headerClass += 'bg-white'
     }
-    if (stickyActive.value) {
-        headerClass += ' border-b border-black'
+
+    if (themeStore.theme == 'dark'){
+        headerClass += 'bg-[#080808]'
+    }
+
+    if (stickyActive.value){
+        if (themeStore.theme == 'dark'){
+            headerClass += ' border-b border-white'
+        } else {
+            headerClass += ' border-b border-black'
+        }
     }
 
     if (themeStore.theme == 'default'){
@@ -55,6 +64,14 @@ const headerClass = computed(() => {
     }
 
     return headerClass
+})
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark'){
+        return "text-white"
+    }
+
+    return 'text-black'
 })
 
 function logout() {
@@ -82,11 +99,11 @@ function decodeToken() {
     </dialog>
     <header class="sticky top-0 z-30" :class="headerClass" v-if="headerReady">
         <div v-if="windowWidth > 600" class="flex justify-between items-center py-3 mx-auto w-[90%]">
-            <span @click="$router.push('/')" class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
-                    <div class="flex justify-between items-center text-sm">
-                        <span @click="$router.push('/')" class="cursor-pointer">{{ $t('home') }}</span>
+            <span @click="$router.push('/')" :class="textTheme" class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
+                    <div class="flex justify-between items-center text-sm" :class="textTheme">
+                        <span @click="$router.push('/')" class="cursor-pointer">Beranda</span>
                         <span @click="$router.push('/series')" class="mx-6 cursor-pointer">Series</span>
-                        <span @click="$router.push('/article')" class="cursor-pointer mr-3">{{ $t('article') }}</span>
+                        <span @click="$router.push('/article')" class="cursor-pointer mr-3">Artikel</span>
                         <span class="mx-4">|</span>
                         <!-- <Lang class="mx-2" :is-sticky="stickyActive" /> -->
                         <Search onclick="search_modal.showModal()" class="ml-2 cursor-pointer" />
@@ -149,7 +166,7 @@ function decodeToken() {
                             <Transition>
                                 <div v-if="hideDropdown" tabindex="0"
                                     class="dropdown-content z-[1] menu shadow bg-base-100 rounded-xl w-[12rem]">
-                                    <div class="flex items-center mb-3 mt-2 px-3">
+                                    <div class="text-black flex items-center mb-3 mt-2 px-3">
                                         <span v-if="name" class="font-medium">Halo {{ name }}
                                             👋</span>
                                         <span v-else class="font-medium">Siapa kamu?</span>

@@ -35,15 +35,27 @@ function decreaseScrollRecomendation() {
 const bg = computed(() => {
     if (themeStore.theme == 'default'){
         return 'bg-[#FBEEE4]'
-    } else if (themeStore.theme == 'light'){
+    } 
+    
+    if (themeStore.theme == 'light'){
         return 'bg-white'
     }
+
+    return "bg-[#080808]"
 }) 
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark') {
+        return 'text-[#D1D5DB]'
+    }
+
+    return "text-dark"
+})
 </script>
 <template>
     <!-- Article body -->
     <div :class="bg">
-        <div class="mx-auto w-full md:w-[75%] py-8 pt-[1rem] block md:flex max-w-screen-xl">
+        <div :class="textTheme" class="pt-16 mx-auto w-full md:w-[75%] py-8 block md:flex max-w-screen-xl">
             <div class="w-[90%] md:w-[65%] md:mx-0 mx-auto">
                 <div class="block">
                     <slot/>

@@ -11,12 +11,22 @@ const bg = computed(() => {
     } else if (themeStore.theme == 'light') {
         return 'bg-white'
     }
+
+    return "bg-[#080808]"
 }) 
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark'){
+        return "text-white"
+    }
+
+    return 'text-black'
+})
 </script>
 
 <template>
     <div :class="bg" class="pt-8 border-t border-slate-300">
-        <div class="mx-auto w-full md:w-[90%]">
+        <div :class="textTheme" class="mx-auto w-full md:w-[90%]">
             <div class="px-4 md:px-0 block md:grid grid-cols-6 gap-6 mb-4 md:mb-10">
                 <div class="block col-span-2">
                     <img src="../assets/images/logo.png" width="80" />

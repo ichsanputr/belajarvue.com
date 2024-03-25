@@ -11,24 +11,37 @@ import Pinterest from '@/components/Icons/Pinterest.vue';
 
 const titlePost = ref('')
 const urlPost = ref('')
+const themeStore = useThemeStore()
 
 onMounted(() => {
     titlePost.value = document.title.replace(' - Belajarvue', '')
     urlPost.value = window.location.href
 })
+
+const bg = computed(() => {
+    if (themeStore.theme == 'default'){
+        return 'bg-[#FBEEE4]'
+    } 
+    
+    if (themeStore.theme == 'light'){
+        return 'bg-white'
+    }
+
+    return "bg-[#080808]"
+}) 
 </script>
 <template>
     <div class="block md:sticky top-24 md:px-12 px-0">
         <div class="flex items-center">
             <div class="dropdown dropdown-bottom">
                 <div tabindex="0" role="button">
-                    <div class="px-3 cursor-pointer py-2 flex rounded-lg border border-black mr-3">
+                    <div class="px-3 cursor-pointer py-2 flex rounded-lg border mr-3">
                         <Share class="mr-1" />
                         <span class="text-xs">Bagikan</span>
                     </div>
                 </div>
-                <ul tabindex="0"
-                    class="dropdown-content z-[1] menu px-4 py-3 mt-3 shadow-md bg-[#FBEEE4] border border-black rounded-xl w-[16rem] sm:w-[17rem] md:w-[18rem]">
+                <ul tabindex="0" :class="bg"
+                    class="dropdown-content z-[1] menu px-4 py-3 mt-3 shadow-md border rounded-xl w-[16rem] sm:w-[17rem] md:w-[18rem]">
                     <p class="text-sm font-semibold mb-2">{{ titlePost }}</p>
                     <p class="text-sm">Bagikan artikel ini ke sosial mediamu.</p>
                     <div class="flex justify-between items-center">
@@ -41,7 +54,7 @@ onMounted(() => {
                     </div>
                 </ul>
             </div>
-            <div class="px-3 cursor-pointer py-2 flex rounded-lg border border-black">
+            <div class="px-3 cursor-pointer py-2 flex rounded-lg border">
                 <Bookmark class="mr-1" />
                 <span class="text-xs">{{ $t('save') }}</span>
             </div>

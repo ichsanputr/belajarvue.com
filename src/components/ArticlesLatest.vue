@@ -9,11 +9,23 @@ const bg = computed(() => {
     if (themeStore.theme == 'default'){
         return 'bg-[#fbeee4]'
     }
+
+    if (themeStore.theme == 'dark') {
+        return 'bg-[#080808]'
+    }
+})
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark'){
+        return "text-white"
+    }
+
+    return 'text-black'
 })
 </script>
 <template>
     <div :class="bg" class="py-8 pb-20">
-        <div class="mx-auto w-full md:w-[85%] pb-8">
+        <div :class="textTheme" class="mx-auto w-full md:w-[85%] pb-8">
             <div class="mt-4 mb-8 md:mx-0 mx-8">
                 <h2 class="font-semibold text-[20px] mb-1">Artikel Terbaru</h2>
                 <p class="text-[14px] mt-2">Artikel terbaru yang kami terbitkan.</p>
