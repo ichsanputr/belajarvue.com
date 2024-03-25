@@ -8,4 +8,4 @@ sed -i -e 's/>Belajarvue</>Reset Password - Belajarvue</g' ./dist/reset-password
 sed -i -e 's/>Belajarvue</>Series - Belajarvue</g' ./dist/series.html
 sed -i -e 's/>Belajarvue</>Terms - Belajarvue</g' ./dist/terms.html
 
-sed -i -e 's/>metaDescription</>Belajarvue merupakan website platform online yang membahas framework javascript populer yaitu Vue.js secara detail. Kami menyediakan berbagai artikel dalam bentuk series guna mempermudah dalam proses belajar.</g' ./dist/index.html
+sed -i -e 's/metaDescription/Belajarvue merupakan website platform online yang membahas framework javascript populer yaitu Vue.js secara detail. Kami menyediakan berbagai artikel dalam bentuk series guna mempermudah dalam proses belajar./g' ./dist/index.html
