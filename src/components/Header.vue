@@ -12,7 +12,6 @@ import Profile from './Icons/Profile.vue';
 import ProfileName from './Partials/ProfileName.vue';
 import CheckedTheme from './Icons/CheckedTheme.vue'
 
-import { useTokenStore } from '@/stores/token'
 import { useJwt } from '@vueuse/integrations/useJwt'
 
 const tokenStore = useTokenStore()
@@ -22,6 +21,7 @@ const windowWidth = ref(null)
 const headerReady = ref(false)
 const hideDropdown = ref(false)
 const name = ref('')
+const avatar = ref('')
 
 onMounted(async () => {
     windowWidth.value = window.innerWidth
@@ -84,6 +84,7 @@ function logout() {
 function decodeToken() {
     const { payload } = useJwt(tokenStore.token)
     name.value = payload.value?.username
+    avatar.value = payload.value?.avatar
 }
 </script>
 
@@ -159,8 +160,11 @@ function decodeToken() {
                         </div>
                         <div class="dropdown dropdown-bottom dropdown-end" @click="console.log(themeStore.theme)">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
-                                <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0"
+                                <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0 && !avatar"
                                     class="cursor-pointer" />
+                                <div v-else-if="tokenStore.token.length > 0 && avatar">
+                                    <img width="24" class="rounded-full" :src="avatar">
+                                </div>
                                 <Profile v-else class="cursor-pointer" />
                             </div>
                             <Transition>

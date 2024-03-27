@@ -29,7 +29,8 @@ const textTheme = computed(() => {
         <div :class="textTheme" class="mx-auto w-full md:w-[90%]">
             <div class="px-4 md:px-0 block md:grid grid-cols-6 gap-6 mb-4 md:mb-10">
                 <div class="block col-span-2">
-                    <img src="../assets/images/logo.png" width="80" />
+                    <img v-if="themeStore.theme != 'dark'" class="text-white" src="../assets/images/logo.png" width="80" />
+                    <img v-else class="text-white" src="../assets/images/logo-dark.png" width="80" />
                     <div class="font-semibold text-[20px] mt-3 mb-4">Belajarvue.com _< </div>
                             <div class="font-light text-[14px]">Belajarvue merupakan website platform online yang
                                 membahas khusus mengenai salah satu framework
@@ -70,19 +71,19 @@ const textTheme = computed(() => {
                         <div class="font-semibold text-[16px] mt-6">{{ $t('contact') }}</div>
                         <ul>
                             <li>
-                                <a class="text-black" href="https://www.instagram.com/sannm.f/" target="_blank">
+                                <a :class="textTheme" href="https://www.instagram.com/sannm.f/" target="_blank">
                                     Instagram
                                 </a>
                             </li>
                             <li>
-                                <a class="text-black" href="https://www.facebook.com/ichsanputr/" target="_blank">
+                                <a :class="textTheme" href="https://www.facebook.com/ichsanputr/" target="_blank">
                                     Facebook
                                 </a>
                             </li>
-                            <li><a class="text-black" href="mailto:ichsanfadhil67@gmail.com" target="_blank">
+                            <li><a :class="textTheme" href="mailto:ichsanfadhil67@gmail.com" target="_blank">
                                     Email
                                 </a></li>
-                            <li><a class="text-black" href="https://twitter.com/needsannn" target="_blank">
+                            <li><a :class="textTheme" href="https://twitter.com/needsannn" target="_blank">
                                     Twitter
                                 </a></li>
                         </ul>

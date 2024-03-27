@@ -22,6 +22,11 @@ export default defineConfig({
             'useThemeStore',
           ],
         },
+        {
+          '@/stores/token': [
+            'useTokenStore',
+          ],
+        },
       ]
     })
   ],

@@ -29,6 +29,10 @@ function redirectSignup(){
     router.push(`/signup?email=${email.value}`)
 }
 
+function registerGithub(){
+    window.open('https://github.com/login/oauth/authorize?client_id=Iv1.4d32e912aa4e541f&redirect_uri=http://127.0.0.1:5173/auth/github&scope=read:user')
+}
+
 const bgHero = computed(() => {    
     if (themeStore.theme == 'light'){
         return 'bg-white bg-dotted-light'
@@ -146,7 +150,7 @@ const bgText = computed(() => {
                         class="bg-white border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Google class="w-[16px] md:w-[20px]" />
                     </div>
-                    <div
+                    <div @click="registerGithub"
                         class="text-black bg-white mx-3 border border-black w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-lg justify-center items-center flex cursor-pointer">
                         <Github class="w-[16px] md:w-[20px]" />
                     </div>
