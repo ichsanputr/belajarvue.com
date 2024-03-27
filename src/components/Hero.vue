@@ -30,7 +30,7 @@ function redirectSignup(){
 }
 
 function registerGithub(){
-    window.open('https://github.com/login/oauth/authorize?client_id=Iv1.4d32e912aa4e541f&redirect_uri=http://127.0.0.1:5173/auth/github&scope=read:user')
+    window.open('https://github.com/login/oauth/authorize?client_id=Iv1.4d32e912aa4e541f&redirect_uri=https://belajarvue.com/auth/github&scope=read:user')
 }
 
 const bgHero = computed(() => {    
