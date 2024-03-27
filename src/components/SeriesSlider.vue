@@ -20,7 +20,7 @@ onMounted(async () => {
         <div class="w-[85%] mx-auto flex justify-between items-center overflow-x-scroll my-12" id="scrollSeries" style="scrollbar-width: none">
             <div v-for="(i,index) in 8" @click="$router.push('/series')"
                 class="shadow bg-white relative w-[300px] mr-10 rounded-lg flex flex-none h-[380px] flex-col py-0 space-y-0">
-                <div class="bg-[#EAFDC6] text-sm w-full rounded-t-lg text-center font-medium py-1">
+                <div class="bg-[#4349FF] text-white text-sm w-full rounded-t-lg text-center font-medium py-1">
                     1 artikel
                 </div>
                 <div class="mb-8">

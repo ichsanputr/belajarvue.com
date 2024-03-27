@@ -9,6 +9,7 @@ const email = ref('')
 const password = ref('')
 const sendStep = ref(true)
 const showPassword = ref(false)
+const themeStore = useThemeStore()
 
 onMounted(() => {
     if (route.query.code) {
@@ -54,11 +55,33 @@ async function changePassword() {
         }, 500)
     }
 }
+
+const bgHero = computed(() => {    
+    if (themeStore.theme == 'light'){
+        return 'bg-white bg-dotted-light'
+    }
+
+    if (themeStore.theme == 'default'){
+        return 'bg-[#fbeee4] bg-dotted-default'
+    }
+
+    if (themeStore.theme == 'dark') {
+        return 'bg-dotted-dark'
+    }
+})
+
+const textTheme = computed(() => {
+    if (themeStore.theme == 'dark'){
+        return "text-white"
+    }
+
+    return 'text-black'
+})
 </script>
 
 <template>
-    <div class="bg-dotted py-10 md:py-14 border-t border-slate-300">
-        <div class="mx-auto max-[900px]:w-[90%] md:w-[30%]">
+    <div :class="bgHero" class="py-10 md:py-14 border-t border-slate-300">
+        <div :class="textTheme" class="mx-auto max-[900px]:w-[90%] md:w-[30%]">
             <h1 class="font-semibold">Reset Password</h1>
             <p v-if="sendStep" class="mt-2 mb-4 text-sm">Masukkan email yang pernah anda daftarkan, kami akan
                 mengirimkan link untuk
@@ -66,7 +89,7 @@ async function changePassword() {
             <p v-else class="mt-2 mb-4 text-sm">Masukkan pasword baru mu.</p>
             <label v-if="sendStep" class="form-control w-full">
                 <div class="label">
-                    <span class="label-text font-medium">Email</span>
+                    <span :class="textTheme" class="label-text font-medium">Email</span>
                 </div>
                 <input v-model="email" type="text" placeholder="Masukkan email Anda" class="input input-bordered w-full"
                     :class="{ 'border-red-400 border': errEmail }" />

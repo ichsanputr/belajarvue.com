@@ -68,7 +68,7 @@ const headerClass = computed(() => {
 
 const textTheme = computed(() => {
     if (themeStore.theme == 'dark'){
-        return "text-white"
+        return "text-[#D1D5DB]"
     }
 
     return 'text-black'
@@ -83,6 +83,11 @@ function logout() {
 
 function decodeToken() {
     const { payload } = useJwt(tokenStore.token)
+
+    if (!payload.value && tokenStore.token){
+        tokenStore.token = null
+    }
+    
     name.value = payload.value?.username
     avatar.value = payload.value?.avatar
 }
@@ -160,9 +165,9 @@ function decodeToken() {
                         </div>
                         <div class="dropdown dropdown-bottom dropdown-end" @click="console.log(themeStore.theme)">
                             <div @click="hideDropdown = !hideDropdown" tabindex="0" role="button">
-                                <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token.length > 0 && !avatar"
+                                <ProfileName :letter="name?.charAt(0)" v-if="tokenStore.token?.length > 0 && !avatar"
                                     class="cursor-pointer" />
-                                <div v-else-if="tokenStore.token.length > 0 && avatar">
+                                <div v-else-if="tokenStore.token?.length > 0 && avatar">
                                     <img width="24" class="rounded-full" :src="avatar">
                                 </div>
                                 <Profile v-else class="cursor-pointer" />

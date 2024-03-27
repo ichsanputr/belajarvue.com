@@ -1,20 +1,22 @@
 <script setup>
 import LayoutDefault from '@/layouts/Default.vue'
 import Login from '@/components/Login.vue'
-import { useSeoMeta } from '@unhead/vue';
+import { useJwt } from '@vueuse/integrations/useJwt'
 
 onMounted(() => {
-  window.scrollTo(0,0)
-})
+  const tokenStore = useTokenStore()
+  const router = useRouter()
+  const { payload } = useJwt(tokenStore.token)
 
-useSeoMeta({
-  title: "Kakakak",
-  description: "Lahhhh"
+  if (payload.value){
+    router.push('/')
+  }
+  window.scrollTo(0, 0)
 })
 </script>
 
 <template>
   <LayoutDefault>
-    <Login/>
+    <Login />
   </LayoutDefault>
 </template>

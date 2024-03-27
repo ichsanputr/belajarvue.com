@@ -17,7 +17,7 @@ const bg = computed(() => {
 
 const textTheme = computed(() => {
     if (themeStore.theme == 'dark'){
-        return "text-white"
+        return "text-[#D1D5DB]"
     }
 
     return 'text-black'
