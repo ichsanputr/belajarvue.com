@@ -33,16 +33,16 @@ function decreaseScrollRecomendation() {
 }
 
 const bg = computed(() => {
-    if (themeStore.theme == 'default'){
+    if (themeStore.theme == 'default') {
         return 'bg-[#FBEEE4]'
-    } 
-    
-    if (themeStore.theme == 'light'){
+    }
+
+    if (themeStore.theme == 'light') {
         return 'bg-white'
     }
 
     return "bg-[#080808]"
-}) 
+})
 
 const textTheme = computed(() => {
     if (themeStore.theme == 'dark') {
@@ -57,8 +57,9 @@ const textTheme = computed(() => {
     <div :class="bg">
         <div :class="textTheme" class="pt-16 mx-auto w-full md:w-[75%] py-8 block md:flex max-w-screen-xl">
             <div class="w-[90%] md:w-[65%] md:mx-0 mx-auto">
-                <div class="block">
-                    <slot/>
+                <div class="block body-article">
+                    <slot />
+                    <div class="divider text-sm py-9 font-medium">Selesai 🎉</div>
                 </div>
                 <!-- Reccomendation -->
                 <div class="mt-6 flex justify-between items-center">
@@ -75,11 +76,13 @@ const textTheme = computed(() => {
                         class="w-full flex justify-between items-center scroll-smooth overflow-x-auto md:mt-10"
                         style="scrollbar-width: none">
 
-                        <div v-for="(i, index) in 6" class="w-[180px] md:w-[220px] cursor-pointer flex-none my-10 md:my-0"
+                        <div v-for="(i, index) in 6"
+                            class="w-[180px] md:w-[220px] cursor-pointer flex-none my-10 md:my-0"
                             :class="{ 'mr-12': index != 5 }">
                             <img width="100%" class="rounded-lg shadow"
                                 src="https://ik.imagekit.io/vpaoovtzwz/tr:h-360,w-640/images/series/01HPSP40F09A2TBD92SNP0X8P3.jpg?tr=n-thumbnail" />
-                            <div class="my-3 font-semibold text-[14px] md:text-[16px] mt-6">Membuat Aplikasi Donasi dengan Vue 3,
+                            <div class="my-3 font-semibold text-[14px] md:text-[16px] mt-6">Membuat Aplikasi Donasi
+                                dengan Vue 3,
                                 Firebase,
                                 Tailwind CSS</div>
                             <div class="my-3 font-normal text-[12px] md:text-[14px]">Pelajari cara kerja Blueprint untuk

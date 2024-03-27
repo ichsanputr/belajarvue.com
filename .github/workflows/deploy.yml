@@ -43,8 +43,10 @@ jobs:
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Change title page manuyally
+      - name: Change title page manually
         run: sh ./seo.sh
+      - name: Seo for article
+        run: sh ./seo-article.sh
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

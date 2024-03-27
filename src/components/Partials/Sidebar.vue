@@ -63,7 +63,7 @@ const bg = computed(() => {
             <div class="text-light text-sm mb-3">Ditulis oleh</div>
             <div class="flex">
                 <div class="flex-none mt-3 mr-4">
-                    <img src="https://www.gravatar.com/avatar/6d999db3cd931c3ed11d21c36d533a5e?s=200&d=mp"
+                    <img src="https://avatars.githubusercontent.com/u/69036480?v=4"
                         class="rounded-full" width="32">
                 </div>
                 <div class="block flex-auto">
@@ -71,7 +71,7 @@ const bg = computed(() => {
                         <span>Muhammad Ichsanul F.</span>
                     </div>
                     <div class="text-sm">
-                        <span>Hanya seorang manusia yang suka menulis dengan bahasa pemrograman</span>
+                        <span>Fullstack developer, Content writer, and Wordpress developer</span>
                     </div>
                 </div>
             </div>

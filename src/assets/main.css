@@ -68,3 +68,13 @@ p {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.body-article ul {
+    list-style: inside;
+    margin-left: 30px;
+    margin-bottom: 24px;
+}
+
+.body-article li {
+    margin-bottom: 8px;
+}
