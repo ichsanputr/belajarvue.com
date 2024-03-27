@@ -42,24 +42,24 @@ onMounted(async () => {
 
 const headerClass = computed(() => {
     let headerClass = ''
-    
-    if (themeStore.theme == 'light'){
+
+    if (themeStore.theme == 'light') {
         headerClass += 'bg-white'
     }
 
-    if (themeStore.theme == 'dark'){
+    if (themeStore.theme == 'dark') {
         headerClass += 'bg-[#080808]'
     }
 
-    if (stickyActive.value){
-        if (themeStore.theme == 'dark'){
+    if (stickyActive.value) {
+        if (themeStore.theme == 'dark') {
             headerClass += ' border-b border-white'
         } else {
             headerClass += ' border-b border-black'
         }
     }
 
-    if (themeStore.theme == 'default'){
+    if (themeStore.theme == 'default') {
         headerClass += ' bg-[#fbeee4]'
     }
 
@@ -67,7 +67,7 @@ const headerClass = computed(() => {
 })
 
 const textTheme = computed(() => {
-    if (themeStore.theme == 'dark'){
+    if (themeStore.theme == 'dark') {
         return "text-[#D1D5DB]"
     }
 
@@ -84,10 +84,10 @@ function logout() {
 function decodeToken() {
     const { payload } = useJwt(tokenStore.token)
 
-    if (!payload.value && tokenStore.token){
+    if (!payload.value && tokenStore.token) {
         tokenStore.token = null
     }
-    
+
     name.value = payload.value?.username
     avatar.value = payload.value?.avatar
 }
@@ -105,7 +105,8 @@ function decodeToken() {
     </dialog>
     <header class="sticky top-0 z-30" :class="headerClass" v-if="headerReady">
         <div v-if="windowWidth > 600" class="flex justify-between items-center py-3 mx-auto w-[90%]">
-            <span @click="$router.push('/')" :class="textTheme" class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
+            <span @click="$router.push('/')" :class="textTheme"
+                class="cursor-pointer font-semibold text-lg">BelajarVue.com _< </span>
                     <div class="flex justify-between items-center text-sm" :class="textTheme">
                         <span @click="$router.push('/')" class="cursor-pointer">Beranda</span>
                         <span @click="$router.push('/series')" class="mx-6 cursor-pointer">Series</span>
@@ -200,14 +201,20 @@ function decodeToken() {
                     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content">
                         <label for="my-drawer" class="drawer-button flex">
-                            <Hamburger />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" fill="currentColor"viewBox="0 0 48 48">
+                                <g fill="currentColor" :stroke="themeStore.theme == 'dark' ? 'white' : 'black'" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                                    <path d="M7.94971 11.9497H39.9497" />
+                                    <path d="M7.94971 23.9497H39.9497" />
+                                    <path d="M7.94971 35.9497H39.9497" />
+                                </g>
+                            </svg>
                         </label>
                     </div>
                     <div class="drawer-side">
                         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                         <div style="width: 20rem;" class="pa-4 menu min-h-full bg-[#fbeee4]">
                             <div class="flex items-center justify-between px-3 my-2">
-                                <span class="font-semibold text-lg">BelajarVue.com </span>
+                                <span :class="textTheme" class="font-semibold text-lg">BelajarVue.com </span>
                                 <label for="my-drawer" aria-label="close sidebar"
                                     class="font-normal rounded-full py-[7px] px-[7px] border border-black"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
@@ -245,28 +252,55 @@ function decodeToken() {
                     </div>
                 </div>
             </div>
-            <div @click="$router.push('/')" class="font-semibold text-lg">BelajarVue.com _< </div>
+            <div :class="textTheme" @click="$router.push('/')" class="font-semibold text-lg">BelajarVue.com _< </div>
                     <div class="dropdown dropdown-bottom dropdown-end pr-1">
-                        <div tabindex="0" role="button">
+                        <div :class="textTheme" tabindex="0" role="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" viewBox="0 0 20 20">
                                 <path fill="currentColor"
                                     d="M10 3.5a6.5 6.5 0 1 1 0 13zM10 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16" />
                             </svg>
                         </div>
                         <ul tabindex="0"
-                            class="dropdown-content z-[1] menu text-[12px] p-1 shadow bg-base-100 rounded-box w-[7rem]">
-                            <li><a class="flex">
-                                    <Night class="w-[16px]" />
-                                    <span>Dark</span>
-                                </a></li>
-                            <li><a class="flex">
-                                    <Light class="w-[16px]" />
-                                    <span>Light</span>
-                                </a></li>
-                            <li><a class="flex">
-                                    <Website class="w-[16px]" />
-                                    <span>Default</span>
-                                </a></li>
+                            class="dropdown-content z-[1] menu text-[12px] p-1 shadow bg-base-100 rounded-box w-[7.5rem]">
+                            <li>
+                                <a @click="themeStore.theme = 'dark'"
+                                    :class="{ 'bg-slate-200': themeStore.theme == 'dark' }"
+                                    class="flex justify-between">
+                                    <div class="flex">
+                                        <Night class="w-[16px] mr-2" />
+                                        <span>Dark</span>
+                                    </div>
+                                    <div v-if="themeStore.theme == 'dark'">
+                                        <CheckedTheme />
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="themeStore.theme = 'light'"
+                                    :class="{ 'bg-slate-200': themeStore.theme == 'light' }"
+                                    class="flex justify-between">
+                                    <div class="flex">
+                                        <Light class="w-[16px] mr-2" />
+                                        <span>Light</span>
+                                    </div>
+                                    <div v-if="themeStore.theme == 'light'">
+                                        <CheckedTheme />
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a @click="themeStore.theme = 'default'"
+                                    :class="{ 'bg-slate-200': themeStore.theme == 'default' }"
+                                    class="flex justify-between">
+                                    <div class="flex">
+                                        <Website class="w-[16px] mr-2" />
+                                        <span>Default</span>
+                                    </div>
+                                    <div v-if="themeStore.theme == 'default'">
+                                        <CheckedTheme />
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
             </div>

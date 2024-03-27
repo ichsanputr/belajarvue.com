@@ -46,7 +46,7 @@ const textTheme = computed(() => {
                 <h1 :class="bgText" class="px-4 py-2 font-bold shadow w-fit md:max-w-[70%] my-5">
                     {{  props.title }}
                 </h1>
-                <p :class="bgText" class="shadow mt-3 px-4 py-3 text-sm md:w-[65%] w-fit">{{ props.description }}</p>
+                <p :class="bgText" class="shadow mt-3 px-4 py-3 text-xs md:text-sm md:w-[65%] w-fit">{{ props.description }}</p>
                 <div class="flex items-center w-fit mt-6" v-if="props.series">
                     <div class="rounded-xl bg-[black] text-white px-2 py-1 text-xs flex items-center">
                         <SeriesLight class="text-[12px] mr-1" />

@@ -35,7 +35,7 @@ const bg = computed(() => {
         <div class="flex items-center">
             <div class="dropdown dropdown-bottom">
                 <div tabindex="0" role="button">
-                    <div class="px-3 cursor-pointer py-2 flex rounded-lg border mr-3">
+                    <div :class="themeStore.theme == 'dark' ? 'border-white' : 'border-black'" class="px-3 cursor-pointer py-2 flex rounded-lg border mr-3">
                         <Share class="mr-1" />
                         <span class="text-xs">Bagikan</span>
                     </div>
@@ -54,7 +54,7 @@ const bg = computed(() => {
                     </div>
                 </ul>
             </div>
-            <div class="px-3 cursor-pointer py-2 flex rounded-lg border">
+            <div :class="themeStore.theme == 'dark' ? 'border-white' : 'border-black'" class="px-3 cursor-pointer py-2 flex rounded-lg border">
                 <Bookmark class="mr-1" />
                 <span class="text-xs">{{ $t('save') }}</span>
             </div>
